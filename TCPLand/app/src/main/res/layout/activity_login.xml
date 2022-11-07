@@ -23,27 +23,15 @@
             android:layout_height="0dp"
             android:layout_weight="3"
             >
-            <ImageView
-                android:id="@+id/login_logo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:alpha="1"
-                android:contentDescription="@string/hello_world"
-                android:paddingTop="20dp"
-                android:src="@drawable/logotcp"
-                android:visibility="invisible"
-                />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
                 android:src="@drawable/logotcp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_logo"
-                app:layout_constraintVertical_bias="1.0"
-                tools:layout_editor_absoluteX="126dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -143,7 +131,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/remember_me"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintTop_toBottomOf="@id/frame_password"
                 />

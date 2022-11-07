@@ -13,7 +13,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="hello_world">Hello</string>
     <string name="password">password</string>
-    <string name="remember_me">Remember</string>
+    <string name="remember_me">remember me</string>
     <string name="login">Login</string>
     <string name="or_using">or using</string>
     <string name="don_t_have_an_account">dont have an account</string>
@@ -29,4 +29,15 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_label_1">text_label_1</string>
+    <string name="text_label_2">text_label_2</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="setting">Setting</string>
+    <string name="trangchu">Trang chủ</string>
+    <string name="batdongsan">Bất động sản</string>
+    <string name="vi">Ví</string>
+    <string name="profile">Profile</string>
 </resources>
