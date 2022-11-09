@@ -15,7 +15,7 @@
         android:theme="@style/Theme.TCPLand"
         tools:targetApi="31">
         <activity
-            android:name=".UI.DashBoard"
+            android:name=".View.DashBoard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

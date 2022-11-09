@@ -1,4 +1,4 @@
-package com.example.tcpland.Fragments;
+package com.example.tcpland.View.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

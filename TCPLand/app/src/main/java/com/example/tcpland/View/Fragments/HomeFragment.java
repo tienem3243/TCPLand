@@ -1,21 +1,28 @@
-package com.example.tcpland.Fragments;
+package com.example.tcpland.View.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.tcpland.View.DashBoardAdapter;
+import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RealEstate extends Fragment {
-
+public class HomeFragment extends Fragment {
+    GridView dashboard;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -25,7 +32,7 @@ public class RealEstate extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public RealEstate() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -54,12 +61,36 @@ public class RealEstate extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.real_estate_fragment, container, false);
+        return inflater.inflate(R.layout.home_fragment, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        dashboard = (GridView) getView().findViewById(R.id.grid_container);
+        ArrayList<ItemModel> dashBoardGridItemList = new ArrayList<>();
+    //todo change follow app require
+        InitDashBoard(dashBoardGridItemList);
+    }
+
+    private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
+        dashboard.setAdapter(adapter);
     }
 }

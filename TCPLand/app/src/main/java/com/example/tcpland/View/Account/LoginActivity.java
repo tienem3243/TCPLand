@@ -1,4 +1,4 @@
-package com.example.tcpland.Account;
+package com.example.tcpland.View.Account;
 
 import android.os.Bundle;
 
@@ -12,5 +12,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 }
