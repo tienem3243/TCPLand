@@ -40,4 +40,8 @@
     <string name="batdongsan">Bất động sản</string>
     <string name="vi">Ví</string>
     <string name="profile">Profile</string>
+    <string name="real_estate">Bất động sản</string>
+    <string name="trang_ch">Trang chủ</string>
+    <string name="wallet">Ví</string>
+    <string name="refactor">Tài khoản</string>
 </resources>

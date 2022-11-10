@@ -82,14 +82,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
-        dashBoardGridItemList.add(new ItemModel("Empty", R.drawable.ic_home_foreground));
+        dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl));
+        dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate));
+        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract));
+        dashBoardGridItemList.add(new ItemModel("Chuyên gia", R.drawable.ic_consultants));
+        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news));
+        dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions));
+        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contact));
+        dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media));
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
         dashboard.setAdapter(adapter);
     }

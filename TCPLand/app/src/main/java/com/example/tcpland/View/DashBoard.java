@@ -5,12 +5,13 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.tcpland.R;
 import com.example.tcpland.View.Fragments.HomeFragment;
 import com.example.tcpland.View.Fragments.Profile;
 import com.example.tcpland.View.Fragments.RealEstate;
 import com.example.tcpland.View.Fragments.Wallet;
-import com.example.tcpland.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DashBoard extends AppCompatActivity {
 
@@ -22,10 +23,10 @@ public class DashBoard extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(navListener);
-
-        // as soon as the application opens the first
-        // fragment should be shown to the user
-        // in this case it is algorithm fragment
+        FloatingActionButton btn=findViewById(R.id.deposit);
+        btn.setOnClickListener(v -> {
+            LoadFragmentSelected(new Profile());
+        });
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RealEstate()).commit();
 
     }
@@ -40,7 +41,7 @@ public class DashBoard extends AppCompatActivity {
             case R.id.real_estate:
                 selectedFragment = new RealEstate();
                 break;
-            case R.id.home:
+            case R.id.homeD:
                 selectedFragment = new HomeFragment();
                 break;
             case R.id.wallet:
@@ -50,12 +51,17 @@ public class DashBoard extends AppCompatActivity {
                 selectedFragment = new Profile();
                 break;
 
+
         }
         // It will help to replace the
         // one fragment to other.
         if (selectedFragment != null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+            LoadFragmentSelected(selectedFragment);
         }
         return true;
     };
+
+    private void LoadFragmentSelected(Fragment selectedFragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+    }
 }
