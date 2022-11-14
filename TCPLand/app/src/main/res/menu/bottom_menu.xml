@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/real_estate"
-        android:title="@string/real_estate"
-        android:icon="@drawable/ic_settings_foreground"/>
-
     <item android:id="@+id/homeD"
         android:title="@string/trang_ch"
-        android:icon="@drawable/ic_settings_foreground"/>
+        android:icon="@drawable/ic_real_estate"/>
+
+    <item android:id="@+id/real_estate"
+        android:title="@string/real_estate"
+        android:icon="@drawable/ic_home_page"/>
     <item android:id="@+id/mplaceholder"
         android:title=""
         />
 
     <item android:id="@+id/wallet"
         android:title="@string/wallet"
-        android:icon="@drawable/ic_settings_foreground"/>
+        android:icon="@drawable/ic_wallet"/>
 
     <item android:id="@+id/profile"
         android:title="@string/refactor"
-        android:icon="@drawable/ic_settings_foreground"/>
+        android:icon="@drawable/ic_user"/>
 
 
 </menu>

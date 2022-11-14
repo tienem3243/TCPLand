@@ -38,4 +38,5 @@ public class DashBoardAdapter extends ArrayAdapter<ItemModel> {
         imgDashboard.setImageResource(courseModel.getImgid());
         return listitemView;
     }
+
 }

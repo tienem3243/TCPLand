@@ -15,7 +15,7 @@
                 <group
                     android:translateX="8.014"
                     android:translateY="-0.905"
-                    android:pivotX="19.5"
+                    android:pivotX="19.3"
                     android:pivotY="19.5"
                     android:scaleX="33.372"
                     android:scaleY="3.922"
@@ -34,11 +34,11 @@
                                 >
                                 <item
                                     android:color="#EAB43A"
-                                    android:offset="0.043"
+                                    android:offset="0.45"
                                     />
                                 <item
                                     android:color="#A300A4FF"
-                                    android:offset="0.745"
+                                    android:offset="0.5"
                                     />
                                 <item
                                     android:color="#0038FF"

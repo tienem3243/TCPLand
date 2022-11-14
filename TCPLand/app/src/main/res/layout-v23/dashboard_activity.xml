@@ -10,7 +10,7 @@
         android:id="@+id/deposit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="@drawable/deposit_btn"
+        android:foreground="@drawable/ic_deposit"
         android:translationY="-30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

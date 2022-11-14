@@ -4,15 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.tcpland.View.DashBoardAdapter;
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
+import com.example.tcpland.View.DashBoardAdapter;
 
 import java.util.ArrayList;
 
@@ -79,6 +80,19 @@ public class HomeFragment extends Fragment {
         ArrayList<ItemModel> dashBoardGridItemList = new ArrayList<>();
     //todo change follow app require
         InitDashBoard(dashBoardGridItemList);
+        dashboard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+               switch (position){
+                   case 0:
+                   Fragment nextFrag= new News();
+                   getActivity().getSupportFragmentManager().beginTransaction()
+                           .replace(R.id.fragment_container,nextFrag, "findThisFragment")
+                           .addToBackStack(null)
+                           .commit();
+               }
+            }
+        });
     }
 
     private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
@@ -90,6 +104,7 @@ public class HomeFragment extends Fragment {
         dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions));
         dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contact));
         dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media));
+        
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
         dashboard.setAdapter(adapter);
     }

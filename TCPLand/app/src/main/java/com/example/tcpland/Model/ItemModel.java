@@ -6,6 +6,7 @@ public class ItemModel {
     // and imgid for storing image id.
     private String course_name;
     private int imgid;
+    private int id;
 
     public ItemModel(String course_name, int imgid) {
         this.course_name = course_name;

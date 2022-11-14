@@ -14,7 +14,9 @@
     </style>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
     </style>
-
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#121F69</color>
     <color name="colorAccent">#2196F3</color>
