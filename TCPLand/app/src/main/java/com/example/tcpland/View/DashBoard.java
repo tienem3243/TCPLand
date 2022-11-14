@@ -28,7 +28,8 @@ public class DashBoard extends AppCompatActivity {
         btn.setOnClickListener(v -> {
 
         });
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RealEstate()).commit();
+        if (savedInstanceState == null)
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
     }
 

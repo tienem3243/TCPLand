@@ -200,7 +200,7 @@
 
             <TextView
                 android:id="@+id/daily_val1"
-                android:layout_width="wrap_content"
+                android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:text="Giá trị hoàn vốn hằng ngày"
                 android:textColor="@color/white">
@@ -216,9 +216,22 @@
                 android:layout_toEndOf="@+id/currency3"
                 android:text="VND"
                 android:textStyle="bold"
-                android:textColor="@color/white">
+                android:textColor="@color/white" />
 
-            </TextView>
+            <ImageButton
+                android:id="@+id/back_daily_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/daily_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
 
             <TextView
                 android:id="@+id/currency3"
@@ -249,7 +262,7 @@
 
             <TextView
                 android:id="@+id/total_val1"
-                android:layout_width="wrap_content"
+                android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:text="Tổng giá trị hoàn vốn"
                 android:textColor="@color/white">
@@ -279,6 +292,20 @@
                 android:textColor="@color/white">
 
             </TextView>
+            <ImageButton
+                android:id="@+id/back_total_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/total_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/total_profit_val"
@@ -296,7 +323,7 @@
 
             <TextView
                 android:id="@+id/total_profit_val1"
-                android:layout_width="wrap_content"
+                android:layout_width="178dp"
                 android:layout_height="wrap_content"
                 android:text="Tổng giá trị lợi nhuận cho thuê"
                 android:textColor="@color/white">
@@ -326,6 +353,21 @@
                 android:textColor="@color/white">
 
             </TextView>
+
+            <ImageButton
+                android:id="@+id/back_total_rental_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/total_profit_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
         </RelativeLayout>
         <LinearLayout
             android:id="@+id/account_manager"
@@ -342,17 +384,18 @@
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/total_rental_profit">
                 </ImageView>
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="31dp"
-                    android:textColor="@color/white"
-                    android:text="Tổng giá trị lợi nhuận cho thuê">
-                </TextView>
+                    android:text="Tổng giá trị lợi nhuận cho thuê"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/my_contract"
@@ -361,17 +404,17 @@
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/my_contract">
                 </ImageView>
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="31dp"
-                    android:textColor="@color/white"
-                    android:text="Hợp đồng của tôi">
-                </TextView>
+                    android:text="Hợp đồng của tôi"
+                    android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -379,17 +422,17 @@
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/bank_account">
                 </ImageView>
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="31dp"
-                    android:textColor="@color/white"
-                    android:text="Tài khoản ngân hàng">
-                </TextView>
+                    android:text="Tài khoản ngân hàng"
+                    android:textColor="@color/white"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -397,24 +440,24 @@
                 android:layout_marginTop="25dp"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/my_real_estate">
                 </ImageView>
+
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="31dp"
-                    android:textColor="@color/white"
-                    android:text="Bất động sản của tôi">
-                </TextView>
+                    android:text="Bất động sản của tôi"
+                    android:textColor="@color/white"></TextView>
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/account_manager2"
             android:layout_width="match_parent"
-            android:layout_height="185dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/account_manager"
             android:background="@drawable/rectangle_1371_3_"
             android:elevation="11dp"
@@ -428,13 +471,13 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/total_rental_profit"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="31dp"
                     android:text="Điều khoản và điều kiện"
                     android:textColor="@color/white" />
@@ -447,13 +490,13 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/ic_contact" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="31dp"
                     android:text="Liên hệ"
                     android:textColor="@color/white" />
@@ -476,8 +519,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
+                    android:layout_width="@dimen/ic_witdh"
+                    android:layout_height="@dimen/ic_height"
                     android:src="@drawable/ic_sign_out"></ImageView>
 
                 <TextView

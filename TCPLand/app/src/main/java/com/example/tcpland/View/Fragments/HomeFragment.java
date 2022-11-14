@@ -83,28 +83,26 @@ public class HomeFragment extends Fragment {
         dashboard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-               switch (position){
-                   case 0:
-                   Fragment nextFrag= new News();
-                   getActivity().getSupportFragmentManager().beginTransaction()
+
+                Fragment nextFrag=  dashBoardGridItemList.get(position).getTargetFragment();
+                if (savedInstanceState == null)
+                    getActivity().getSupportFragmentManager().beginTransaction()
                            .replace(R.id.fragment_container,nextFrag, "findThisFragment")
                            .addToBackStack(null)
                            .commit();
-               }
             }
         });
     }
 
     private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
-        dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl));
-        dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate));
-        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract));
-        dashBoardGridItemList.add(new ItemModel("Chuyên gia", R.drawable.ic_consultants));
-        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news));
-        dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions));
-        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contact));
-        dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media));
-        
+        dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl,new Tcp_land_fund()));
+        dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate,new My_real_estate()));
+        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract,new Contract()));
+        dashBoardGridItemList.add(new ItemModel("Chuyên gia", R.drawable.ic_consultants,new Consultants()));
+        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new News()));
+        dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions,new Question()));
+        dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media,new Social_Media()));
+
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
         dashboard.setAdapter(adapter);
     }

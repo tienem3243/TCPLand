@@ -1,21 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".View.Fragments.Wallet">
 
-    <TextView
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    tools:context=".View.Fragments.Wallet">
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/vi"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:background="@android:color/transparent">
+        <RelativeLayout
+            android:id="@id/daily_val_vg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/gradient_color_retangle"
+            android:elevation="11dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="19dp">
+
+            <TextView
+                android:id="@+id/daily_val1"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Giá trị hoàn vốn hằng ngày"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/currency1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/daily_val1"
+                android:layout_marginLeft="2dp"
+                android:layout_toEndOf="@+id/currency3"
+                android:text="VND"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <ImageButton
+                android:id="@+id/back_daily_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/daily_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/currency3"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/daily_val1"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/total_val_vg"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_below="@+id/daily_val_vg"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/gradient_color_retangle"
+            android:elevation="11dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="19dp">
+
+            <TextView
+                android:id="@+id/total_val1"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Tổng giá trị hoàn vốn"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_val2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_val1"
+                android:layout_marginLeft="2dp"
+                android:layout_toEndOf="@+id/total_val3"
+                android:text="VND"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_val3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_val1"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+            </TextView>
+            <ImageButton
+                android:id="@+id/back_total_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/total_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/total_profit_val"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_below="@+id/total_val_vg"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/gradient_color_retangle"
+            android:elevation="11dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="19dp">
+
+            <TextView
+                android:id="@+id/total_profit_val1"
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Tổng giá trị lợi nhuận cho thuê"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_profit_val2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_profit_val1"
+                android:layout_marginLeft="2dp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/total_profit_val3"
+                android:text="VND"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/total_profit_val3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/total_profit_val1"
+                android:text="0"
+                android:textStyle="bold"
+                android:textColor="@color/white">
+
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/back_total_rental_profit_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="301dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="21dp"
+                android:layout_toEndOf="@+id/total_profit_val1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_icon">
+
+            </ImageButton>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="114dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="196dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle_round"
+                android:elevation="11dp"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/ic_deposit"
+                    android:layout_width="48dp"
+                    android:layout_height="53dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_deposit3"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="53dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/ic_deposit"
+                    android:text="Nạp tiền"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"></TextView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/rectangle_round"
+                android:elevation="11dp"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/ic_with_draw"
+                    android:layout_width="48dp"
+                    android:layout_height="53dp"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/ic_with_draw" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/ic_with_draw"
+                    android:text="Rút tiền"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"></TextView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

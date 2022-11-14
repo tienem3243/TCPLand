@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -38,5 +39,7 @@ public class DashBoardAdapter extends ArrayAdapter<ItemModel> {
         imgDashboard.setImageResource(courseModel.getImgid());
         return listitemView;
     }
+
+
 
 }
