@@ -1,4 +1,4 @@
-package com.example.tcpland.View;
+package com.example.tcpland.Controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;

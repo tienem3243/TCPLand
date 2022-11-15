@@ -24,7 +24,7 @@ public class JsonHandler extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.testjsonloader);
+        setContentView(R.layout.news_item);
         String jsonFileString = Utils.getJsonFromAssets(getApplicationContext(), "data.json");
         Gson gson = new Gson();
         Type listUserType = new TypeToken<List<NewsModel>>() { }.getType();
@@ -33,7 +33,7 @@ public class JsonHandler extends AppCompatActivity {
         for (int i = 0; i < newsModel.size(); i++) {
             Log.i("data", "> Item " + i + "\n" + newsModel.get(i).getLinkImg());
         }
-        
+
     }
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;

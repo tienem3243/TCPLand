@@ -1,6 +1,11 @@
 package com.example.tcpland.Model;
 
 public class NewsModel {
+    public NewsModel(int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
+
     private int id;
     private String title;
     private String price;

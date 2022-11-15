@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
-import com.example.tcpland.View.DashBoardAdapter;
+import com.example.tcpland.Controller.DashBoardAdapter;
 
 import java.util.ArrayList;
 
@@ -62,7 +62,6 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -70,7 +69,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.home_fragment, container, false);
-
     }
 
     @Override

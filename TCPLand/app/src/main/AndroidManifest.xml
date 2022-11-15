@@ -15,7 +15,7 @@
         android:theme="@style/Theme.TCPLand"
         tools:targetApi="31">
         <activity
-            android:name=".Controller.JsonHandler"
+            android:name=".View.DashBoard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,9 +28,11 @@
                 android:value="" />
         </activity>
 
-        <activity android:label="@string/app_name" android:name=".View.DashBoard"/>
+
         <activity android:label="@string/app_name" android:name=".View.Account.Profile"/>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 </manifest>
