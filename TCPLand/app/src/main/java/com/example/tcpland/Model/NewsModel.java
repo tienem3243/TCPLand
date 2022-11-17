@@ -1,55 +1,42 @@
 package com.example.tcpland.Model;
 
 public class NewsModel {
-    public NewsModel(int id, String title) {
-        this.id = id;
-        this.title = title;
+
+    private String name;
+    private String phn;
+    private int photo;
+
+    public NewsModel() {
+
     }
 
-    private int id;
-    private String title;
-    private String price;
-    private String category;
-    private String linkImg;
-
-    public int getId() {
-        return id;
+    public NewsModel(String name, String phn, int photo) {
+        this.name = name;
+        this.phn = phn;
+        this.photo = photo;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
 
-    public String getTitle() {
-        return title;
+    public String getPhn() {
+        return phn;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getPhoto() {
+        return photo;
     }
 
-
-    public String getCategory() {
-        return category;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setPhn(String phn) {
+        this.phn = phn;
     }
 
-    public String getLinkImg() {
-        return linkImg;
-    }
-
-    public void setLinkImg(String src) {
-        this.linkImg = src;
-    }
-
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-    public String getPrince(){
-        return price;
+    public void setPhoto(int photo) {
+        this.photo = photo;
     }
 }

@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
-import com.example.tcpland.View.Fragments.HomeFragment;
 import com.example.tcpland.View.Account.Profile;
+import com.example.tcpland.View.Fragments.HomeFragment;
 import com.example.tcpland.View.Fragments.RealEstate;
 import com.example.tcpland.View.Fragments.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,10 +28,13 @@ public class DashBoard extends AppCompatActivity {
         btn.setOnClickListener(v -> {
 
         });
-        if (savedInstanceState == null)
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .commit();
 
     }
+
+
 
     private final BottomNavigationView.OnItemSelectedListener navListener = item -> {
         // By using switch we can easily get
@@ -53,8 +56,6 @@ public class DashBoard extends AppCompatActivity {
                 Intent intent= new Intent(getApplicationContext(),Profile.class);
                 DashBoard.this.startActivity(intent);
                 break;
-
-
         }
         // It will help to replace the
         // one fragment to other.
@@ -65,6 +66,8 @@ public class DashBoard extends AppCompatActivity {
     };
 
     private void LoadFragmentSelected(Fragment selectedFragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .addToBackStack("Home")
+                .replace(R.id.fragment_container, selectedFragment).commit();
     }
 }

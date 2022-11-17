@@ -5,41 +5,44 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tcpland.Model.NewsModel;
+import com.example.tcpland.Model.TestNewsModel;
 import com.example.tcpland.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
+/**
+ * Created by Mahadi on 3/11/2018.
+ */
+
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
+
     Context context;
-    ArrayList<NewsModel> listNews;
-    public NewsAdapter(Context context, ArrayList<NewsModel> listNews) {
+    List<TestNewsModel> listNews;
+
+    public NewsAdapter(Context context, List<TestNewsModel> newsList) {
         this.context = context;
-        this.listNews = listNews;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View newsView = inflater.inflate(R.layout.news_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(newsView);
-        return viewHolder;
+        this.listNews = newsList;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        NewsModel hero = listNews.get(position);
-//        Glide.with(context)
-//                .load(hero.getTitle())
-//                .into(holder.title);
-        holder.title.setText(hero.getTitle());
-        Log.e("sss", hero.getTitle());
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v;
+        v = LayoutInflater.from(context).inflate(R.layout.news_items, parent, false);
+        MyViewHolder myViewHolder = new MyViewHolder(v);
+        return myViewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        Log.e("pos", "onBindViewHolder: "+position);
+        holder.title.setText(listNews.get(position).getTitle());
+        holder.id.setText(String.valueOf(listNews.get(position).getId()));
+
     }
 
     @Override
@@ -47,12 +50,19 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         return listNews.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView title;
-        public ViewHolder(@NonNull View itemView) {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+            TextView id;
+            TextView title;
+            ImageView avatar;
+
+
+        public MyViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.titleD);
-            Log.e("viewholdertrans",title.getText().toString());
+
+            id = (TextView) itemView.findViewById(R.id.id);
+            title = (TextView) itemView.findViewById(R.id.title_item);
+            avatar=itemView.findViewById(R.id.img_view);
         }
     }
 }
