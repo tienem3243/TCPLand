@@ -45,4 +45,5 @@
     <string name="wallet">Ví</string>
     <string name="refactor">Tài khoản</string>
     <string name="so_du_tai_khoan">So du tai khoan</string>
+    <string name="user">User</string>
 </resources>

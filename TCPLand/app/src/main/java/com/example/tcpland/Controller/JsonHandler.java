@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.example.tcpland.Model.TestNewsModel;
+import com.example.tcpland.Model.NewsModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -17,11 +17,11 @@ import java.util.List;
 
 public class JsonHandler{
 
-    public List<TestNewsModel> Load(String fileName, Context context) {
+    public List<NewsModel> Load(String fileName, Context context) {
         String jsonFileString = UtilsCustom.getJsonFromAssets(context, fileName);
         Gson gson = new Gson();
-        Type listUserType = new TypeToken<List<TestNewsModel>>() { }.getType();
-        List<TestNewsModel> newsModel = gson.fromJson(jsonFileString, listUserType);
+        Type listUserType = new TypeToken<List<NewsModel>>() { }.getType();
+        List<NewsModel> newsModel = gson.fromJson(jsonFileString, listUserType);
         return newsModel;
     }
 

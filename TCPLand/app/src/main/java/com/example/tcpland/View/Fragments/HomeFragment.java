@@ -92,13 +92,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.home_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        dashboard = (GridView) getView().findViewById(R.id.grid_container);
+        dashboard =getView().findViewById(R.id.grid_container);
         ArrayList<ItemModel> dashBoardGridItemList = new ArrayList<>();
     //todo change follow app require
         InitDashBoard(dashBoardGridItemList);

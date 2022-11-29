@@ -67,7 +67,6 @@ public class DashBoard extends AppCompatActivity {
 
     private void LoadFragmentSelected(Fragment selectedFragment) {
         getSupportFragmentManager().beginTransaction()
-                .addToBackStack("Home")
                 .replace(R.id.fragment_container, selectedFragment).commit();
     }
 }
