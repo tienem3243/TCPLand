@@ -38,7 +38,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/currency1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/daily_val1"
@@ -49,7 +48,6 @@
                 android:textColor="@color/white" />
 
             <ImageButton
-                android:id="@+id/back_daily_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -100,7 +98,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/total_val2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/total_val1"
@@ -123,7 +120,6 @@
 
             </TextView>
             <ImageButton
-                android:id="@+id/back_total_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -161,7 +157,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/total_profit_val2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/total_profit_val1"
@@ -185,7 +180,6 @@
             </TextView>
 
             <ImageButton
-                android:id="@+id/back_total_rental_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -208,7 +202,6 @@
         android:layout_gravity="center">
 
         <RelativeLayout
-            android:id="@+id/relativeLayout2"
             android:layout_width="204dp"
             android:layout_height="97dp"
 
@@ -245,7 +238,6 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relativeLayout3"
             android:layout_width="172dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"

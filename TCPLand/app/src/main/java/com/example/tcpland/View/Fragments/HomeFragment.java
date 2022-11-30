@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.tcpland.Controller.DashBoardAdapter;
+import com.example.tcpland.Adapter.DashBoardAdapter;
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
 

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".Controller.Sign_up"
-    android:background="@drawable/bg">
+    tools:context=".View.Account.Sign_up"
 
+    android:background="@drawable/bg">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:orientation="vertical">
     <ImageButton
         android:layout_width="92dp"
         android:layout_height="83dp"
@@ -16,10 +22,479 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:textSize="30sp"
+        android:textColor="@color/white"
         android:layout_gravity="center"
         android:text="@string/user"
-      >
+        >
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="ID User">
+        </TextView>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:background="@drawable/rectangle_2"
+            android:hint="Vd: 23123123"
+            android:inputType="textEmailAddress"
+            android:paddingStart="45dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textStyle="normal"
+            android:typeface="sans" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="Email">
+        </TextView>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:background="@drawable/rectangle_2"
+            android:hint=".@gmail.com"
+            android:inputType="textEmailAddress"
+            android:paddingStart="45dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textStyle="normal"
+            android:typeface="sans" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="Password">
+        </TextView>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:background="@drawable/rectangle_2"
+            android:hint="Vd:Carl@2132"
+            android:inputType="textPassword"
+            android:paddingStart="45dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textStyle="normal"
+            android:typeface="sans" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/ma_xac_nhan">
+        </TextView>
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rectangle_2"
+            android:hint="Vd: 32314"
+            android:inputType="textEmailAddress"
+            android:paddingStart="45dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textStyle="normal"
+            android:typeface="sans" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loại ví"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white">
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+        </CheckBox>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="135.12dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="171dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"></CheckBox>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="135.12dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="171dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+        </CheckBox>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="135.12dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Ví 1">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="171dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_2"
+                android:hint="Vd: 32314"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/gray"
+                android:textStyle="normal"
+                android:typeface="sans" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Họ tên"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        >
     </TextView>
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="362dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rectangle_2"
+        android:hint="Vd: Nguyen Van Ho"
+        android:inputType="textEmailAddress"
+        android:paddingStart="45dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:textStyle="normal"
+        android:typeface="sans" />
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="213.27dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trực thuộc"
+                    android:layout_marginLeft="42dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+                </TextView>
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="161.52dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_7"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cấp bậc"
+                    android:layout_marginLeft="42dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+                </TextView>
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="161.52dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_7"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hoa hồng"
+                    android:layout_marginLeft="42dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+                </TextView>
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="161.52dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_7"
+                    android:spinnerMode="dropdown"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quản lý"
+                    android:layout_marginLeft="42dp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white">
+                </TextView>
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="161.52dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_7"
+                    android:spinnerMode="dropdown"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:text="Ngày tham gia">
+        </TextView>
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="411dp"
+            android:layout_marginTop="8dp"
+            android:calendarTextColor="@color/black"
+            android:theme="@style/CalenderViewCustom"
+            android:datePickerMode="calendar" />
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="266dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/button_2">
+
+    </ImageButton>
 </LinearLayout>
+
+</ScrollView>

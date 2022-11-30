@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tcpland.Controller.JsonHandler;
-import com.example.tcpland.Controller.RealEastateAdapter;
+import com.example.tcpland.FileHandler.JsonHandler;
+import com.example.tcpland.Adapter.RealEastateAdapter;
 import com.example.tcpland.Model.NewsModel;
 import com.example.tcpland.R;
 

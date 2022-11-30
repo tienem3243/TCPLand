@@ -15,7 +15,6 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/menu_btn"
                 android:layout_width="56dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="28dp"
@@ -26,7 +25,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/announcement_btn"
                 android:layout_width="68dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="20dp"
@@ -52,7 +50,6 @@
             android:layout_marginTop="10dp">
 
             <RelativeLayout
-                android:id="@+id/rectangle_1"
                 android:layout_width="179.72dp"
                 android:layout_height="77.62dp"
                 android:layout_alignParentStart="true"
@@ -127,7 +124,6 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/frame_62487"
                 android:layout_width="173dp"
                 android:layout_height="48dp"
                 android:layout_alignParentStart="true"
@@ -152,7 +148,6 @@
                         app:shapeAppearanceOverlay="@style/Circular"></com.google.android.material.imageview.ShapeableImageView>
 
                     <ImageView
-                        android:id="@+id/ellipse_111"
                         android:layout_width="10dp"
                         android:layout_height="10dp"
                         android:layout_marginStart="34dp"
@@ -208,7 +203,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/currency1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/daily_val1"
@@ -219,7 +213,6 @@
                 android:textColor="@color/white" />
 
             <ImageButton
-                android:id="@+id/back_daily_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -270,7 +263,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/total_val2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/total_val1"
@@ -293,7 +285,6 @@
 
             </TextView>
             <ImageButton
-                android:id="@+id/back_total_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -331,7 +322,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/total_profit_val2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/total_profit_val1"
@@ -355,7 +345,6 @@
             </TextView>
 
             <ImageButton
-                android:id="@+id/back_total_rental_profit_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentStart="true"
@@ -398,7 +387,6 @@
                     android:textColor="@color/white" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/my_contract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -503,7 +491,6 @@
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/account_manager3"
             android:layout_width="match_parent"
             android:layout_height="185dp"
             android:layout_below="@id/account_manager2"

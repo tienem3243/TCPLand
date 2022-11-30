@@ -38,7 +38,7 @@ public class TestWebView extends AppCompatActivity {
             }
         });
 
-        mWebview .loadUrl("https://gpland.tech/#sanpham");
+        mWebview .loadUrl("https://gpland.tech");
         setContentView(mWebview );
     }
 }
