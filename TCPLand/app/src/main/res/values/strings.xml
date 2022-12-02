@@ -18,16 +18,19 @@
     <string name="so_du_tai_khoan">So du tai khoan</string>
     <string name="user">User</string>
     <string name="ma_xac_nhan">Nhập mã xác nhận</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_navigator">Navigator</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string-array name="navigation_drawer_items_array">
-        <item>Connect</item>
-        <item>Fixtures</item>
-        <item>Table</item>
-    </string-array>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="t_i_s_n">Tài sản</string>
+    <string name="th_ng_tin_d_n">Thông tin dự án</string>
+    <string name="c_p_b_c">Cấp bậc</string>
+    <string name="hoa_h_ng">Hoa hồng</string>
 </resources>

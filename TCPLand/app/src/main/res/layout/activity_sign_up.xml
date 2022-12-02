@@ -14,11 +14,7 @@
     android:layout_height="wrap_content"
     android:padding="25dp"
     android:orientation="vertical">
-    <ImageButton
-        android:layout_width="92dp"
-        android:layout_height="83dp"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/navigator_horizontal" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -382,7 +378,6 @@
                     android:textColor="@color/white">
                 </TextView>
                 <Spinner
-                    android:id="@+id/spinner1"
                     android:layout_width="161.52dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectangle_7"
@@ -404,7 +399,6 @@
                     android:textColor="@color/white">
                 </TextView>
                 <Spinner
-                    android:id="@+id/spinner2"
                     android:layout_width="161.52dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectangle_7"
@@ -432,7 +426,6 @@
                     android:textColor="@color/white">
                 </TextView>
                 <Spinner
-                    android:id="@+id/spinner3"
                     android:layout_width="161.52dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectangle_7"
@@ -454,7 +447,6 @@
                     android:textColor="@color/white">
                 </TextView>
                 <Spinner
-                    android:id="@+id/spinner4"
                     android:layout_width="161.52dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rectangle_7"
@@ -478,7 +470,6 @@
             android:text="Ngày tham gia">
         </TextView>
         <DatePicker
-            android:id="@+id/datePicker"
             android:layout_width="match_parent"
             android:layout_height="411dp"
             android:layout_marginTop="8dp"
