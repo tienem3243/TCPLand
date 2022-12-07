@@ -1,4 +1,4 @@
-package com.example.tcpland.View.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,10 +11,10 @@ import com.example.tcpland.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Tcp_land_fund#newInstance} factory method to
+ * Use the {@link Social_Media#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tcp_land_fund extends Fragment {
+public class Social_Media extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class Tcp_land_fund extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Tcp_land_fund() {
+    public Social_Media() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class Tcp_land_fund extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment tcp_land_fund.
+     * @return A new instance of fragment Social_Media.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tcp_land_fund newInstance(String param1, String param2) {
-        Tcp_land_fund fragment = new Tcp_land_fund();
+    public static Social_Media newInstance(String param1, String param2) {
+        Social_Media fragment = new Social_Media();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +60,6 @@ public class Tcp_land_fund extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tcp_land_fund, container, false);
+        return inflater.inflate(R.layout.fragment_social__media, container, false);
     }
 }

@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
 import com.example.tcpland.View.Account.Profile;
-import com.example.tcpland.View.Fragments.HomeFragment;
-import com.example.tcpland.View.Fragments.RealEstate;
-import com.example.tcpland.View.Fragments.Wallet;
+import com.example.tcpland.ui.Fragments.Fragments.HomeFragment;
+import com.example.tcpland.ui.Fragments.Fragments.RealEstate;
+import com.example.tcpland.ui.Fragments.Fragments.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

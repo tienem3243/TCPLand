@@ -29,33 +29,11 @@ public class Navigator extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.appBarNavigator.toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         setSupportActionBar(binding.appBarNavigator.toolbar);
-        binding.appBarNavigator.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                return false;
-            }
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id=menuItem.getItemId();
-                if (id == R.id.xxx){
-                    Intent newIntent = new Intent(this, NewActivity.class);
-                    startActivity(newIntent);
-                }
-                return true;
-            }
-        });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

@@ -1,4 +1,4 @@
-package com.example.tcpland.View.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments;
 
 import android.annotation.TargetApi;
 import android.os.Bundle;

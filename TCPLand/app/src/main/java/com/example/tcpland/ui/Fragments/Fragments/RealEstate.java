@@ -1,4 +1,4 @@
-package com.example.tcpland.View.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +37,7 @@ public class RealEstate extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.news_frmt,container,false);
+        v = inflater.inflate(R.layout.fragment_product,container,false);
         recyclerView = (RecyclerView) v.findViewById(R.id.contact_recycleView);
         RealEastateAdapter viewAdapter = new RealEastateAdapter(getContext(), listCont);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

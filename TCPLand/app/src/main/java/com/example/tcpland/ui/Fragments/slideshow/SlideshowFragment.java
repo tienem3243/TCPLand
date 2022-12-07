@@ -1,4 +1,4 @@
-package com.example.tcpland.ui.slideshow;
+package com.example.tcpland.ui.Fragments.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

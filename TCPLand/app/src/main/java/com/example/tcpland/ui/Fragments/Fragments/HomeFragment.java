@@ -1,4 +1,4 @@
-package com.example.tcpland.View.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;

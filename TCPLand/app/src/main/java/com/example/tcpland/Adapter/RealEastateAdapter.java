@@ -34,7 +34,7 @@ public class RealEastateAdapter extends RecyclerView.Adapter<RealEastateAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
-        v = LayoutInflater.from(context).inflate(R.layout.news_items, parent, false);
+        v = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);
         MyViewHolder myViewHolder = new MyViewHolder(v);
         return myViewHolder;
     }
