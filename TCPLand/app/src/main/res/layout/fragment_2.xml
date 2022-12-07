@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".View.Account.Sign_up"
 
-    android:background="@drawable/bg">
+    android:background="@android:color/transparent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
