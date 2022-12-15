@@ -67,7 +67,6 @@ public class RealEastateAdapter extends RecyclerView.Adapter<RealEastateAdapter.
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
             TextView id;
             TextView title;
             TextView createdAt;
