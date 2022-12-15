@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tcpland.R;
-import com.example.tcpland.View.DashBoard;
+import com.example.tcpland.ui.Activity.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
             LoginActivity.this.startActivity(intent);
         });
         buttonLogin.setOnClickListener(v->{
-            Intent intent= new Intent(LoginActivity.this, DashBoard.class);
+            Intent intent= new Intent(LoginActivity.this, HomeActivity.class);
             LoginActivity.this.startActivity(intent);
         });
     }

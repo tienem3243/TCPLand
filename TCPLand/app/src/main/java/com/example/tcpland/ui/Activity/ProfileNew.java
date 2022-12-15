@@ -1,9 +1,9 @@
-package com.example.tcpland;
+package com.example.tcpland.ui.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +13,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.tcpland.R;
 import com.example.tcpland.databinding.ActivityNavigatorBinding;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
-public class Navigator extends AppCompatActivity {
+public class ProfileNew extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigatorBinding binding;
@@ -43,6 +43,16 @@ public class Navigator extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigator);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.getItemId()==R.id.nav_home){
+                    Intent intent= new Intent(getApplicationContext(), HomeActivity.class);
+                    ProfileNew.this.startActivity(intent);
+                }
+                return false;
+            }
+        });
     }
 
     @Override

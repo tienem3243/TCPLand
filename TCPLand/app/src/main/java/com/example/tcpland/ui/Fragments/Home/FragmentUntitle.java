@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.tcpland.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
+public class FragmentUntitle extends Fragment {
 
 private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        UntitleViewMode homeViewModel =
+                new ViewModelProvider(this).get(UntitleViewMode.class);
 
     binding = FragmentHomeBinding.inflate(inflater, container, false);
     View root = binding.getRoot();

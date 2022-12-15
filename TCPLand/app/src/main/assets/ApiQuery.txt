@@ -1,0 +1,34 @@
+{
+                  postsConnection {
+                    edges {
+                      node {
+                        createdAt
+                        slug
+                        title
+                        excerpt
+                        featuredImage {
+                          url
+                        }
+                        content {
+                          html
+                        }
+                        categories {
+                          name
+                          slug
+                          map {
+                            latitude
+                            longitude
+                          }
+                        }
+                        author {
+                          bio
+                          name
+                          id
+                          photo {
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                }

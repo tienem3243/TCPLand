@@ -1,10 +1,12 @@
 package com.example.tcpland.Model;
 
-public class NewsModel {
-    public NewsModel() {
+import android.util.Log;
+
+public class RealEstateModel {
+    public RealEstateModel() {
     }
 
-    public NewsModel(int id, String title, String price, String category, String linkImg) {
+    public RealEstateModel(int id, String title, String price, String category, String linkImg) {
         this.id = id;
         this.title = title;
         this.price = price;

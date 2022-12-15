@@ -7,10 +7,13 @@
     android:background="@drawable/rectangle_4">
 
     <ImageView
-        android:id="@+id/featuredImage"
+        android:id="@+id/img_view"
         android:layout_width="134dp"
         android:layout_height="127dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/ic_media_play" />
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="224dp"
         android:layout_height="128dp"
@@ -18,28 +21,25 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/title_item"
+            android:id="@+id/tutorial_title_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tutorial_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Content"
             android:textColor="#fff"
             android:textStyle="bold" />
-        <TextView
-            android:id="@+id/createdAt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CreatedAt"
-            android:textColor="#fff"
-            />
 
-        <TextView
-            android:id="@+id/exerpt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Exerpt"
-            android:textColor="#fff"
-            android:textStyle="bold" />
+
     </LinearLayout>
+
+</FrameLayout>
+
 
 
 </LinearLayout>

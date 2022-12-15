@@ -15,15 +15,16 @@ import androidx.fragment.app.Fragment;
 import com.example.tcpland.Adapter.DashBoardAdapter;
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
+import com.example.tcpland.ui.Activity.TestWebView;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the {@link DashBoard#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class DashBoard extends Fragment {
     public GridView getDashboard() {
         return dashboard;
     }
@@ -38,7 +39,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public HomeFragment() {
+    public DashBoard() {
         // Required empty public constructor
     }
 
@@ -51,8 +52,8 @@ public class HomeFragment extends Fragment {
      * @return A new instance of fragment AlgorithmFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static DashBoard newInstance(String param1, String param2) {
+        DashBoard fragment = new DashBoard();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -118,11 +119,10 @@ public class HomeFragment extends Fragment {
         dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl,new Tcp_land_fund()));
         dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate,new My_real_estate()));
         dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract,new Contract()));
-        dashBoardGridItemList.add(new ItemModel("Chuyên gia", R.drawable.ic_consultants,new Consultants()));
-        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new NewsFragment()));
+        dashBoardGridItemList.add(new ItemModel("Hướng dẫn", R.drawable.ic_consultants,new Tutorial()));
+        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new RealEstate()));
         dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions,new Question()));
         dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media,new Social_Media()));
-
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
         dashboard.setAdapter(adapter);
     }

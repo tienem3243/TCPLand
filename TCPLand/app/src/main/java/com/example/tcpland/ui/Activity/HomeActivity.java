@@ -1,4 +1,4 @@
-package com.example.tcpland.View;
+package com.example.tcpland.ui.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,14 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
-import com.example.tcpland.View.Account.Profile;
-import com.example.tcpland.ui.Fragments.Fragments.HomeFragment;
+import com.example.tcpland.ui.Fragments.Fragments.DashBoard;
 import com.example.tcpland.ui.Fragments.Fragments.RealEstate;
 import com.example.tcpland.ui.Fragments.Fragments.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class DashBoard extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
 
     @Override
@@ -29,7 +28,7 @@ public class DashBoard extends AppCompatActivity {
 
         });
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
+                    .replace(R.id.fragment_container, new DashBoard())
                     .commit();
 
     }
@@ -47,14 +46,14 @@ public class DashBoard extends AppCompatActivity {
                 selectedFragment = new RealEstate();
                 break;
             case R.id.homeD:
-                selectedFragment = new HomeFragment();
+                selectedFragment = new DashBoard();
                 break;
             case R.id.wallet:
                 selectedFragment = new Wallet();
                 break;
             case R.id.profile:
-                Intent intent= new Intent(getApplicationContext(),Profile.class);
-                DashBoard.this.startActivity(intent);
+                Intent intent= new Intent(getApplicationContext(), ProfileNew.class);
+                HomeActivity.this.startActivity(intent);
                 break;
         }
         // It will help to replace the
