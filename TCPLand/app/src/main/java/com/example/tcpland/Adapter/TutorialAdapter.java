@@ -49,7 +49,9 @@ public class TutorialAdapter extends RecyclerView.Adapter<TutorialAdapter.MyView
 
     @Override
     public int getItemCount() {
+        if (listTutorial!=null)
         return listTutorial.size();
+        return 0;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

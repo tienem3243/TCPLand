@@ -3,10 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg"
+    android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ui.Fragments.Fragments.NewsFragment">
-
+    tools:context=".ui.Fragments.Fragments.Test">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Đây hợp đồng lợi nhuận"
+        android:textSize="30sp"
+        android:textStyle="bold" >
+    </TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tutorial_recycleView"
         android:layout_width="match_parent"

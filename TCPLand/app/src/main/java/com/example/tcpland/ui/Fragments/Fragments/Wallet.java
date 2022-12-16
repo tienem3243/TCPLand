@@ -12,7 +12,7 @@ import com.example.tcpland.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RealEstate#newInstance} factory method to
+ * Use the {@link News#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Wallet extends Fragment {
@@ -39,8 +39,8 @@ public class Wallet extends Fragment {
      * @return A new instance of fragment AlgorithmFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RealEstate newInstance(String param1, String param2) {
-        RealEstate fragment = new RealEstate();
+    public static News newInstance(String param1, String param2) {
+        News fragment = new News();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

@@ -5,10 +5,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.tcpland.R;
 import com.example.tcpland.ui.Fragments.Fragments.DashBoard;
-import com.example.tcpland.ui.Fragments.Fragments.RealEstate;
+import com.example.tcpland.ui.Fragments.Fragments.News;
 import com.example.tcpland.ui.Fragments.Fragments.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -43,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.real_estate:
-                selectedFragment = new RealEstate();
+                selectedFragment = new News(this);
                 break;
             case R.id.homeD:
                 selectedFragment = new DashBoard();
@@ -64,8 +65,15 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     };
 
+    @Override
+    public void onBackPressed() {
+//
+        super.onBackPressed();
+    }
+
     private void LoadFragmentSelected(Fragment selectedFragment) {
         getSupportFragmentManager().beginTransaction()
+                .addToBackStack("Home")
                 .replace(R.id.fragment_container, selectedFragment).commit();
     }
 }

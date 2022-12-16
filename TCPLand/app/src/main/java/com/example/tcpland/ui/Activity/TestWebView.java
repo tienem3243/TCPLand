@@ -1,9 +1,11 @@
 package com.example.tcpland.ui.Activity;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebResourceError;
@@ -34,13 +36,39 @@ public class TestWebView extends Fragment {
     }
 
     String dataWeb;
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview=inflater.inflate(R.layout.web_view_news, container, false);
         WebView mWebview =  rootview.findViewById(R.id.webview);
+        mWebview.setOnTouchListener(new View.OnTouchListener() {
+            float m_downX;
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getPointerCount() > 1) {
+                    //Multi touch detected
+                    return true;
+                }
 
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN: {
+                        // save the x
+                        m_downX = motionEvent.getX();
+                        break;
+                    }
+                    case MotionEvent.ACTION_MOVE:
+                    case MotionEvent.ACTION_CANCEL:
+                    case MotionEvent.ACTION_UP: {
+                        // set x so that it doesn't move
+                        motionEvent.setLocation(m_downX, motionEvent.getY());
+                        break;
+                    }
+
+                }
+                return false;
+            }
+        });
         mWebview.getSettings().setJavaScriptEnabled(true); // enable javascript
         mWebview.loadData(dataWeb,"text/html","UTF-8");
         mWebview.setWebViewClient(new WebViewClient() {

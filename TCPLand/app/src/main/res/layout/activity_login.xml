@@ -29,7 +29,7 @@
         android:layout_width="361.25dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/sign_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +89,7 @@
                     android:background="@drawable/rectangle_2"
                     android:hint="@string/Password"
                     android:inputType="textEmailAddress"
+
                     android:paddingStart="45dp"
                     android:paddingEnd="10dp"
                     android:textColor="@color/white"

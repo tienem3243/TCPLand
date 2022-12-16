@@ -314,33 +314,6 @@
                 android:typeface="sans" />
         </LinearLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center">
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:background="@android:color/transparent"
-        android:src="@drawable/button2"
-      >
-
-    </ImageButton>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_gravity="center"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:background="@android:color/transparent"
-        android:src="@drawable/button1">
-
-    </ImageButton>
-</LinearLayout>
-
-
     </LinearLayout>
 
 </ScrollView>

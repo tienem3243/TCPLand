@@ -5,9 +5,13 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="RectangleRound">
+        <item name="cornerSize">10%</item>
+    </style>
     <style name="CalenderViewCustom" parent="Theme.AppCompat">
         <item name="colorAccent">@color/white</item>
         <item name="colorPrimary">@color/black</item>
     </style>
+
 
 </resources>

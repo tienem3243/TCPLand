@@ -31,7 +31,7 @@
 <!--                android:value="" />-->
 <!--        </activity>-->
         <activity
-            android:name=".ui.Activity.HomeActivity"
+            android:name=".View.Account.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,8 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity> <!-- <activity android:name=".View.Account.LoginActivity" /> -->
+        </activity>
+        <activity android:name=".ui.Activity.HomeActivity" />
         <activity android:name=".View.Account.Profile" />
         <activity android:name=".View.Account.Sign_up" />
         <activity android:name=".ui.Activity.ProfileNew" />

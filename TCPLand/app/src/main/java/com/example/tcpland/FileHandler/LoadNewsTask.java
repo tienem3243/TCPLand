@@ -22,9 +22,16 @@ import okhttp3.Response;
 
 public class LoadNewsTask extends AsyncTask<String,Void,String>{
     Activity activity;
-    int loadRange=0;
+    int first =0;
+    int range=100;
     //todo optimize load
     public AsyncResponse delegate = null;
+    public LoadNewsTask(Activity activity, int first, int range, AsyncResponse delegate) {
+        this.activity = activity;
+        this.first = first;
+        this.range = range;
+        this.delegate = delegate;
+    }
     public LoadNewsTask(Activity Activity, AsyncResponse delegate){
         this.delegate = delegate;
         activity=Activity;
@@ -46,7 +53,7 @@ public class LoadNewsTask extends AsyncTask<String,Void,String>{
         String val="postsConnection";
         int index=query.indexOf(val);
 
-        query= addString(query,"(skip: "+loadRange+")",index+val.length());
+        query= addString(query,"(skip: "+ first +"first:"+range+")",index+val.length());
         Log.e("get query", "doInBackground: "+query);
         HttpUrl.Builder urlBuilder
                 = HttpUrl.parse("https://api-ap-northeast-1.hygraph.com/v2/clbequozv0gwt01una4fc4di0/master").newBuilder();
@@ -81,13 +88,6 @@ public class LoadNewsTask extends AsyncTask<String,Void,String>{
         }
     }
 
-    public List<RealEstateModel> LoadRealEstate(String fileName, Context context) {
-        String jsonFileString = UtilsCustom.getJsonFromAssets(context, fileName);
-        Gson gson = new Gson();
-        Type listUserType = new TypeToken<List<RealEstateModel>>() { }.getType();
-        List<RealEstateModel> realEstateModel = gson.fromJson(jsonFileString, listUserType);
-        return realEstateModel;
-    }
 
     public String LoadData(String inFile,Context context) {
         String tContents = "";

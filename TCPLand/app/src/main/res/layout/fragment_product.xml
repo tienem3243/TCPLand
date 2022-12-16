@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg"
+
     android:orientation="vertical"
-    tools:context=".ui.Fragments.Fragments.NewsFragment">
+    tools:context=".ui.Fragments.Fragments.Test">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contact_recycleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_ripple">
 
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

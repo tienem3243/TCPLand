@@ -16,8 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import org.jetbrains.annotations.Nullable;
 
-public class NewsFragment extends Fragment {
-    public NewsFragment() {
+public class Test extends Fragment {
+    public Test() {
 
     }
 
