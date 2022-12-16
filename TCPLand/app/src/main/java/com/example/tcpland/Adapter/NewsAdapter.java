@@ -120,7 +120,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             TestWebView webView = new TestWebView(data);
             activity.getSupportFragmentManager()
                     .beginTransaction()
-                    .addToBackStack("News")
+                    .addToBackStack(null)
                     .replace(R.id.fragment_container, webView)
                     .commit();
         }
