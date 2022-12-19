@@ -1,5 +1,4 @@
-{
-                  postsConnection {
+{postsConnection {
                     edges {
                       node {
                         createdAt
@@ -28,7 +27,7 @@
                             url
                           }
                         }
+
                       }
                     }
-                  }
-                }
+                  }}

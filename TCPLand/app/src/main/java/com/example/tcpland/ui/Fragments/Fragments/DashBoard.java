@@ -109,7 +109,7 @@ public class DashBoard extends Fragment {
             Fragment nextFrag=  dashBoardGridItemList.get(position).getTargetFragment();
             if (savedInstanceState == null)
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .addToBackStack(null)
+                        .addToBackStack("second")
                        .replace(R.id.fragment_container1,nextFrag, "findThisFragment")
                        .commit();
         });

@@ -29,6 +29,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
     Context context;
     List<News> listNews;
     LoadNewsTask taskLoad;
+
     public NewsAdapter(Context context, List<News> listNews, LoadNewsTask load) {
         this.context = context;
         this.listNews = listNews;
@@ -71,28 +72,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         return listNews.size();
     }
 
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-        RecyclerView.LayoutManager manager=recyclerView.getLayoutManager();
-        if(manager instanceof LinearLayoutManager && getItemCount() > 0) {
-            LinearLayoutManager llm = (LinearLayoutManager) manager;
-            recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                @Override
-                public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                    super.onScrollStateChanged(recyclerView, newState);
-                }
-
-                @Override
-                public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                    super.onScrolled(recyclerView, dx, dy);
-                    int visiblePosition = llm.findFirstCompletelyVisibleItemPosition();
-                    Log.e("testScrollVisible", "onScrolled: "+visiblePosition );
-
-                }
-            });
-        }
-    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             TextView id;
@@ -118,11 +97,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             AppCompatActivity activity = (AppCompatActivity) view.getContext();
             Log.e("dataLoad", "onClick: "+data );
             TestWebView webView = new TestWebView(data);
-            activity.getSupportFragmentManager()
-                    .beginTransaction()
-                    .addToBackStack(null)
-                    .replace(R.id.fragment_container, webView)
-                    .commit();
+            if(webView!=null){
+                activity.getSupportFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack("null")
+                        .replace(R.id.fragment_container1, webView)
+                        .commit();
+            }
+
         }
     }
 }

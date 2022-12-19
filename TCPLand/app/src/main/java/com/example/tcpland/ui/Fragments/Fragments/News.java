@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import com.example.tcpland.FileHandler.LoadNewsTask;
@@ -59,32 +60,7 @@ public class News extends Fragment {
         if(savedInstanceState==null){
             try {
                 myAsyncTask = (LoadNewsTask) new LoadNewsTask(getActivity(), output -> {
-                    Log.e("res", "processFinish: "+output);
-                    ObjectMapper objectMapper= new ObjectMapper();
-                    JsonNode jsonNode= objectMapper.readTree(output);
-                    String res= String.valueOf(jsonNode
-                            .get("data")
-                            .get("postsConnection")
-                            .get("edges"));
-                    List<Node> data= objectMapper.readValue(res,new TypeReference<List<Node>>(){});
-                    Log.e("chad", "processFinish: "+data.get(0).node.getCreatedAt());
-                    List<com.example.tcpland.Model.News> news= new ArrayList<>();
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        news= data.parallelStream()
-                                .map(Node::getNode)
-                                .collect(Collectors.toList());
-                        Log.e("testStream", "processFinish: "+news.get(0).getCreatedAt() );
-                    }
-
-                    viewAdapter = new NewsAdapter(getContext(),news);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                    recyclerView.setAdapter(viewAdapter);
-                    Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
-                    if(activity != null){
-                        LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(activity, R.anim.layout_animation);
-                        recyclerView.setLayoutAnimation(controller);
-                        recyclerView.scheduleLayoutAnimation();
-                    }
+                    load(output);
 
                 }).execute();
 
@@ -94,6 +70,35 @@ public class News extends Fragment {
         }
 
         return v;
+    }
+
+    private void load(String output) throws IOException {
+        Log.e("res", "processFinish: "+ output);
+        ObjectMapper objectMapper= new ObjectMapper();
+        JsonNode jsonNode= objectMapper.readTree(output);
+        String res= String.valueOf(jsonNode
+                .get("data")
+                .get("postsConnection")
+                .get("edges"));
+        List<Node> data= objectMapper.readValue(res,new TypeReference<List<Node>>(){});
+        Log.e("chad", "processFinish: "+data.get(0).node.getCreatedAt());
+        List<com.example.tcpland.Model.News> news= new ArrayList<>();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            news= data.parallelStream()
+                    .map(Node::getNode)
+                    .collect(Collectors.toList());
+            Log.e("testStream", "processFinish: "+news.get(0).getCreatedAt() );
+        }
+
+        viewAdapter = new NewsAdapter(getContext(),news);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(viewAdapter);
+        Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
+        if(activity != null){
+            LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(activity, R.anim.layout_animation);
+            recyclerView.setLayoutAnimation(controller);
+            recyclerView.scheduleLayoutAnimation();
+        }
     }
 
     @Override
