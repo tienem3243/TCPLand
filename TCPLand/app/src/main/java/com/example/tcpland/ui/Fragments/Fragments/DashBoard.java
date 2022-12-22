@@ -119,7 +119,7 @@ public class DashBoard extends Fragment {
         dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate,new My_real_estate()));
         dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract,new Contract()));
         dashBoardGridItemList.add(new ItemModel("Hướng dẫn", R.drawable.ic_consultants,new Tutorial()));
-        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new News(getActivity())));
+        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new NewsFragment( getActivity())));
         dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions,new Question()));
         dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media,new Social_Media()));
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -22,8 +23,10 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import com.example.tcpland.FileHandler.LoadNewsTask;
 import com.example.tcpland.Adapter.NewsAdapter;
+import com.example.tcpland.Model.NewsModel;
 import com.example.tcpland.Model.Node;
 import com.example.tcpland.R;
+import com.example.tcpland.ui.Activity.HomeActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -38,17 +41,17 @@ import java.util.List;
  * Use the {@link DashBoard#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class News extends Fragment {
+public class NewsFragment extends Fragment {
 
     View v;
     RecyclerView recyclerView;
     LoadNewsTask myAsyncTask;
     NewsAdapter  viewAdapter;
     Activity activity;
-    public News() {
+    public NewsFragment() {
 
     }
-    public News(Activity activity) {
+    public NewsFragment(Activity activity) {
         this.activity=activity;
     }
     @SuppressLint("NotifyDataSetChanged")
@@ -59,7 +62,7 @@ public class News extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.contact_recycleView);
         if(savedInstanceState==null){
             try {
-                myAsyncTask = (LoadNewsTask) new LoadNewsTask(getActivity(), output -> {
+                myAsyncTask = (LoadNewsTask) new LoadNewsTask(activity, output -> {
                     load(output);
 
                 }).execute();
@@ -81,24 +84,27 @@ public class News extends Fragment {
                 .get("postsConnection")
                 .get("edges"));
         List<Node> data= objectMapper.readValue(res,new TypeReference<List<Node>>(){});
-        Log.e("chad", "processFinish: "+data.get(0).node.getCreatedAt());
-        List<com.example.tcpland.Model.News> news= new ArrayList<>();
+        Log.e("chad", "processFinish: "+data.get(0).node.getDiaChi());
+        List<NewsModel> news= new ArrayList<>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             news= data.parallelStream()
                     .map(Node::getNode)
                     .collect(Collectors.toList());
             Log.e("testStream", "processFinish: "+news.get(0).getCreatedAt() );
         }
-
-        viewAdapter = new NewsAdapter(getContext(),news);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(viewAdapter);
+        SetAdapter(news);
         Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
         if(activity != null){
             LayoutAnimationController controller = AnimationUtils.loadLayoutAnimation(activity, R.anim.layout_animation);
             recyclerView.setLayoutAnimation(controller);
             recyclerView.scheduleLayoutAnimation();
         }
+    }
+
+    private void SetAdapter(List<NewsModel> news) {
+        viewAdapter = new NewsAdapter(getContext(), news);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(viewAdapter);
     }
 
     @Override
@@ -109,13 +115,11 @@ public class News extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
+
 }

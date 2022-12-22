@@ -5,18 +5,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tcpland.FileHandler.LoadNewsTask;
-import com.example.tcpland.Model.News;
+import com.example.tcpland.Model.NewsModel;
 import com.example.tcpland.R;
-import com.example.tcpland.ui.Activity.TestWebView;
+import com.example.tcpland.ui.Fragments.Fragments.NewsDeepDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -27,16 +27,16 @@ import java.util.List;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
     Context context;
-    List<News> listNews;
+    List<NewsModel> listNews;
     LoadNewsTask taskLoad;
 
-    public NewsAdapter(Context context, List<News> listNews, LoadNewsTask load) {
+    public NewsAdapter(Context context, List<NewsModel> listNews, LoadNewsTask load) {
         this.context = context;
         this.listNews = listNews;
         this.taskLoad = load;
     }
 
-    public NewsAdapter(Context context, List<News> newsList) {
+    public NewsAdapter(Context context, List<NewsModel> newsList) {
         this.context = context;
         this.listNews = newsList;
     }
@@ -57,9 +57,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         Log.e("check", "onBindViewHolder: "+holder.createdAt.toString() );
         //holder.id.setText(String.valueOf(listNews.get(position).getId()));
         holder.excerpt.setText(listNews.get(position).getExcerpt());
-
         holder.data=listNews.get(position).getContent().html;
         holder.createdAt.setText(listNews.get(position).getCreatedAt());
+        holder.news=listNews.get(position);
         Picasso.get()
                 .load(listNews.get(position).getFeaturedImage().url)
                 .into(holder.featuredImage);
@@ -80,6 +80,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             TextView excerpt;
             ImageView featuredImage;
             String data;
+            NewsModel news;
 
 
         public MyViewHolder(View itemView) {
@@ -96,15 +97,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             Log.e("ss", "onClick: " );
             AppCompatActivity activity = (AppCompatActivity) view.getContext();
             Log.e("dataLoad", "onClick: "+data );
-            TestWebView webView = new TestWebView(data);
+            NewsDeepDetail webView = new NewsDeepDetail(data,news);
             if(webView!=null){
                 activity.getSupportFragmentManager()
                         .beginTransaction()
                         .addToBackStack("null")
-                        .replace(R.id.fragment_container1, webView)
+                        .add(R.id.fragment_container1, webView)
                         .commit();
             }
 
         }
+
     }
 }

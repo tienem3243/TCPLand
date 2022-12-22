@@ -1,13 +1,13 @@
 package com.example.tcpland.Model;
 
 public class Node {
-    public News getNode() {
+    public NewsModel getNode() {
         return node;
     }
 
-    public void setNode(News node) {
+    public void setNode(NewsModel node) {
         this.node = node;
     }
 
-    public News node;
+    public NewsModel node;
 }

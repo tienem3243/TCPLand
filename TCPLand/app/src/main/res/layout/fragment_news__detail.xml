@@ -1,14 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:background="@drawable/bg"
     tools:context=".ui.Fragments.Fragments.News_Detail">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="horizontal">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_2"
+            android:gravity="center"
+            android:text="Địa chỉ"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/diachi"
+            android:background="@drawable/rectangle_2"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_blank_fragment" />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="ID dự án"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/idDuAn"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Số nền"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/soNen"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="ID nền"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/idNen"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Loại"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/loai"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Lợi tức cho thuê"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/loiTucChoThue"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Số cổ phần"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/soCoPhan"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Đơn giá"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/donGia"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Đơn giá cổ phần"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/donGiaCoPhan"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:text="Diện tích nền"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/dienTichNen"
+        android:background="@drawable/rectangle_2"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+</LinearLayout>
+
+    <Button
+        android:id="@+id/google_map_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem vị trí">
+
+    </Button>
+</LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

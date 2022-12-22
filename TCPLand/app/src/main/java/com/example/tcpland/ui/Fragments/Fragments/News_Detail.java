@@ -1,66 +1,78 @@
 package com.example.tcpland.ui.Fragments.Fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
-import com.example.tcpland.R;
+import com.example.tcpland.Model.NewsModel;
+import com.example.tcpland.databinding.FragmentNewsDetailBinding;
+import com.google.android.material.snackbar.Snackbar;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link News_Detail#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class News_Detail extends Fragment {
+    String fomartPattern="%.0f";
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    public NewsModel getModel() {
+        return model;
+    }
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    public void setModel(NewsModel model) {
+        this.model = model;
+    }
+
+    public News_Detail(NewsModel model) {
+        this.model = model;
+    }
+
+    NewsModel model;
+    FragmentNewsDetailBinding binding;
 
     public News_Detail() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment News_Detail.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static News_Detail newInstance(String param1, String param2) {
-        News_Detail fragment = new News_Detail();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+        if(savedInstanceState==null){
+
         }
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.e("detail", "onCreateView: "+model.getIdNen() );
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news__detail, container, false);
+
+        binding = FragmentNewsDetailBinding.inflate(inflater,container,false);
+        binding.diachi.setText(model.getDiaChi());
+        binding.dienTichNen.setText(String.format(fomartPattern,model.getDienTichNen()));
+        binding.donGia.setText(String.format(fomartPattern,model.getDonGia()));
+        binding.idNen.setText(model.getIdNen());
+        binding.idDuAn.setText(model.getIdDuAn());
+        binding.loai.setText(model.isLoai()?"Mua chung":"Mua riêng");
+        binding.soNen.setText(String.valueOf( model.getSoNen()));
+        binding.soCoPhan.setText(String.valueOf(model.getSoCoPhan()));
+        binding.loiTucChoThue.setText(String.format(fomartPattern,model.getLoiTucChoThue()));
+        binding.donGiaCoPhan.setText(String.format(fomartPattern, model.getDonGiaCoPhan()));
+        binding.googleMapBtn.setOnClickListener(v->{
+            if(model.getGmaplocation()==null) {
+                Snackbar.make(v,"Lô đắt chưa cập nhật link map", 2000).show();
+                return;
+            }
+            WebView webView= new WebView(getActivity());
+            webView.loadUrl(model.getGmaplocation());
+        });
+        return binding.getRoot();
     }
 }

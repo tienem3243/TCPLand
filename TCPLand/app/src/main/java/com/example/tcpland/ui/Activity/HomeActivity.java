@@ -5,17 +5,26 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.example.tcpland.R;
 import com.example.tcpland.ui.Fragments.Fragments.DashBoard;
-import com.example.tcpland.ui.Fragments.Fragments.News;
+import com.example.tcpland.ui.Fragments.Fragments.NewsFragment;
 import com.example.tcpland.ui.Fragments.Fragments.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.List;
 
+public class HomeActivity extends AppCompatActivity {
+    public List<NewsFragment> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(List<NewsFragment> newsList) {
+        this.newsList = newsList;
+    }
+
+    List<NewsFragment> newsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.real_estate:
-                selectedFragment = new News(this);
+                selectedFragment = new NewsFragment(this);
                 break;
             case R.id.homeD:
                 selectedFragment = new DashBoard();
