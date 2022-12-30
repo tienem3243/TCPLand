@@ -47,6 +47,8 @@
                 android:layout_marginBottom="16dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/text_email"
+                    android:text=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -81,6 +83,8 @@
                 android:layout_marginBottom="16dp">
 
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/text_password"
+                    android:text=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -199,5 +203,15 @@
 
     </FrameLayout>
 
+    <ProgressBar
+        android:id="@+id/loading"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
 
+        app:layout_constraintVertical_bias="0.3"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
