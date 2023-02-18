@@ -1,20 +1,23 @@
 package com.example.tcpland.ui.Fragments.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
+import com.example.tcpland.databinding.WalletFragmentBinding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NewsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Objects;
+
+
 public class Wallet extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -58,9 +61,13 @@ public class Wallet extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        WalletFragmentBinding binding= WalletFragmentBinding.inflate(inflater,container,false);
+        TextView vi1= binding.vi1;
+        TextView vi2= binding.vi2;
+        TextView vi3= binding.vi3;
+        
         return inflater.inflate(R.layout.wallet_fragment, container, false);
     }
 }

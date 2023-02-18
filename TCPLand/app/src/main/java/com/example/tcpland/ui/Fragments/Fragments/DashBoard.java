@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.tcpland.Adapter.DashBoardAdapter;
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
+import com.example.tcpland.View.Account.data.LoginRepository;
 
 import java.util.ArrayList;
 
@@ -115,6 +116,7 @@ public class DashBoard extends Fragment {
         });
     }
     private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
+
         dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl,new Tcp_land_fund()));
         dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate,new My_real_estate()));
         dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract,new Contract()));

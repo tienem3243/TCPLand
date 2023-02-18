@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@drawable/back"
+    android:orientation="vertical">
+  <TableRow
+      android:background="@drawable/back"
+      android:gravity="left">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/back"
+          android:text="Họ tên"
+          android:id="@+id/hoten"
+          android:layout_weight="0.25"
+          android:textSize="21dp"
+          android:gravity="left"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:background="@drawable/back"
+          android:id="@+id/Id"
+          android:text="ID"
+          android:textSize="21dp"
+          android:layout_weight="0.25"
+          android:gravity="left"/>
+  </TableRow>
+</TableLayout>

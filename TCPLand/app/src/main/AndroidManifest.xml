@@ -16,15 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TCPLand"
         tools:targetApi="31">
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="false">-->
-<!--            <meta-data-->
-<!--                android:name="android.app.lib_name"-->
-<!--                android:value="" />-->
-<!--        </activity>-->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="false"> -->
+        <!-- <meta-data -->
+        <!-- android:name="android.app.lib_name" -->
+        <!-- android:value="" /> -->
+        <!-- </activity> -->
         <activity
-            android:name=".View.Account.ui.login.LoginActivity"
+            android:name=".ui.Activity.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,9 +36,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".ui.Activity.HomeActivity" />
         <activity android:name=".View.Account.Profile" />
-        <activity android:name=".View.Account.Sign_up" />
+        <activity android:name=".View.Account.ui.login.Sign_up" />
         <activity android:name=".ui.Activity.ProfileNew" />
     </application>
 

@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:background="@android:color/transparent">
         <RelativeLayout
-            android:id="@id/daily_val_vg"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -32,7 +32,7 @@
                 android:id="@+id/daily_val1"
                 android:layout_width="178dp"
                 android:layout_height="wrap_content"
-                android:text="Giá trị hoàn vốn hằng ngày"
+                android:text="Ví 1"
                 android:textColor="@color/white">
 
             </TextView>
@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/daily_val1"
+                android:id="@+id/vi1"
                 android:layout_marginLeft="2dp"
                 android:layout_toEndOf="@+id/currency3"
                 android:text="VND"
@@ -92,7 +92,7 @@
                 android:id="@+id/total_val1"
                 android:layout_width="178dp"
                 android:layout_height="wrap_content"
-                android:text="Tổng giá trị hoàn vốn"
+                android:text="Ví 2"
                 android:textColor="@color/white">
 
             </TextView>
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/total_val1"
+                android:id="@+id/vi2"
                 android:layout_marginLeft="2dp"
                 android:layout_toEndOf="@+id/total_val3"
                 android:text="VND"
@@ -151,12 +151,13 @@
                 android:id="@+id/total_profit_val1"
                 android:layout_width="178dp"
                 android:layout_height="wrap_content"
-                android:text="Tổng giá trị lợi nhuận cho thuê"
+                android:text="Ví 3"
                 android:textColor="@color/white">
 
             </TextView>
 
             <TextView
+                android:id="@+id/vi3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/total_profit_val1"
@@ -220,7 +221,7 @@
                 android:layout_width="48dp"
                 android:layout_height="53dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_deposit3"></ImageView>
+                android:src="@drawable/ic_deposit3" />
 
             <TextView
                 android:layout_width="wrap_content"

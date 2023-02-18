@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".View.Account.Sign_up"
+    tools:context=".View.Account.ui.login.Sign_up"
 
     android:background="@android:color/transparent">
     <LinearLayout
@@ -31,6 +31,7 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/userID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -66,7 +67,7 @@
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:text="Địa chỉ">
+                android:text="Email">
             </TextView>
             <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
@@ -97,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:text="Tỉnh, Thành phố">
+                    android:text="SDT">
                 </TextView>
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -113,31 +114,7 @@
                     android:textStyle="normal"
                     android:typeface="sans" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:text="Quận, huyện">
-                </TextView>
 
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/rectangle_10"
-                    android:hint="Vd: 32314"
-                    android:inputType="textEmailAddress"
-                    android:paddingLeft="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/gray"
-                    android:textStyle="normal"
-                    android:typeface="sans" />
-            </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
@@ -154,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:text="Tỉnh, Thành phố">
+                    android:text="Họ tên">
                 </TextView>
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -179,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:text="Quận, huyện">
+                    android:text="Trực thuộc">
                 </TextView>
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -195,124 +172,65 @@
                     android:textStyle="normal"
                     android:typeface="sans" />
             </LinearLayout>
-
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Số lượng nền"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/white"
-                >
-            </TextView>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="67dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/rectangle_9"
-                android:inputType="textEmailAddress"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:textStyle="normal"
-                android:typeface="sans" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
                 android:textColor="@color/white"
-                android:text="Mô tả">
+                android:textStyle="bold"
+                android:text="Cấp bậc">
             </TextView>
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
 
-                android:background="@drawable/rectangle_2"
-                android:hint=".@gmail.com"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_10"
+                android:hint="Vd: 32314"
                 android:inputType="textEmailAddress"
-                android:paddingStart="45dp"
-                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:textStyle="normal"
                 android:typeface="sans" />
         </LinearLayout>
+
+
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:text="Số tiền rút">
+                android:text="Số dư ví 1">
             </TextView>
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
 
-                android:background="@drawable/rectangle_2"
-                android:hint=".@gmail.com"
-                android:inputType="textEmailAddress"
-                android:paddingStart="45dp"
-                android:paddingEnd="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:textStyle="normal"
-                android:typeface="sans" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-            <TextView
+            <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:text="Mô tả">
-            </TextView>
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-
-                android:background="@drawable/rectangle_2"
-                android:hint=".@gmail.com"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rectangle_10"
+                android:hint="Vd: 32314"
                 android:inputType="textEmailAddress"
-                android:paddingStart="45dp"
-                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:textStyle="normal"
                 android:typeface="sans" />
         </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cập nhật">
+        </Button>
 
     </LinearLayout>
 

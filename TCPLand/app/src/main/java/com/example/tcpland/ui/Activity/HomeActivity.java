@@ -2,6 +2,7 @@ package com.example.tcpland.ui.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -30,7 +31,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
-
+        Intent intent=getIntent();
+        Log.e("bundle", "onCreate: "+intent.getSerializableExtra("userInfo") );
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(navListener);
         FloatingActionButton btn=findViewById(R.id.deposit);
@@ -53,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.real_estate:
-                selectedFragment = new NewsFragment(this);
+               //
                 break;
             case R.id.homeD:
                 selectedFragment = new DashBoard();

@@ -1,44 +1,119 @@
 package com.example.tcpland.Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Account {
-    public Account(String userId, String hoten, String email, String password, String sdt, Vi vi1, Vi vi2, Vi vi3, String idNguoiGioiThieu, int capbac, Double luong, Double hoahong, String quanliID, Date ngaythamgia, String status, String kind) {
-        this.userId = userId;
-        this.hoten = hoten;
-        this.email = email;
-        this.password = password;
-        this.sdt = sdt;
-        this.vi1 = vi1;
-        this.vi2 = vi2;
-        this.vi3 = vi3;
-        this.idNguoiGioiThieu = idNguoiGioiThieu;
-        this.capbac = capbac;
-        this.luong = luong;
-        this.hoahong = hoahong;
-        this.quanliID = quanliID;
-        this.ngaythamgia = ngaythamgia;
-        this.status = status;
-        this.kind = kind;
+public class Account implements Serializable {
+    @Override
+    public String toString() {
+        return "Account{" +
+                "userId='" + userId + '\'' +
+                ", hoten='" + hoten + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", sdt='" + sdt + '\'' +
+                ", vi1=" + vi1 +
+                ", vi2=" + vi2 +
+                ", vi3=" + vi3 +
+                ", idNguoiGioiThieu='" + idNguoiGioiThieu + '\'' +
+                ", capbac=" + capbac +
+                ", luong=" + luong +
+                ", hoahong=" + hoahong +
+                ", quanliID='" + quanliID + '\'' +
+                ", ngaythamgia='" + ngaythamgia + '\'' +
+                ", status='" + status + '\'' +
+                ", kind='" + kind + '\'' +
+                '}';
+    }
+    public Account (){
+
+    }
+    public String getUserId() {
+        return userId;
     }
 
-    String userId;
-  String hoten;
-  String email;
-  String password;
-  String sdt;
-  Vi vi1;
-  Vi vi2;
-  Vi vi3;
-  String idNguoiGioiThieu;
-  int capbac;
-  Double luong;
-  Double hoahong;
-  String quanliID;
-  Date ngaythamgia;
-  String status;
-  String kind;
+    public String getHoten() {
+        return hoten;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public Vi getVi1() {
+        return vi1;
+    }
+
+    public Vi getVi2() {
+        return vi2;
+    }
+
+    public Vi getVi3() {
+        return vi3;
+    }
+
+    public String getIdNguoiGioiThieu() {
+        return idNguoiGioiThieu;
+    }
+
+    public int getCapbac() {
+        return capbac;
+    }
+
+    public Double getLuong() {
+        return luong;
+    }
+
+    public Double getHoahong() {
+        return hoahong;
+    }
+
+    public String getQuanliID() {
+        return quanliID;
+    }
+
+    public String getNgaythamgia() {
+        return ngaythamgia;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    String userId="";
+    String hoten="";
+    String email="";
+    String password="";
+    String sdt="";
+    Vi vi1;
+    Vi vi2;
+    Vi vi3;
+    String idNguoiGioiThieu="";
+    String tructhuoc_id;
+    int capbac;
+    Double luong;
+    Double hoahong;
+    String quanliID="";
+    String ngaythamgia="";
+    String status="";
+    String kind="";
+
+    public Account setTructhuoc_id(String tructhuoc_id) {
+        this.tructhuoc_id = tructhuoc_id;
+        return this;
+    }
     public Account setUserId(String userId) {
         this.userId = userId;
         return this;
@@ -104,7 +179,7 @@ public class Account {
         return this;
     }
 
-    public Account setNgaythamgia(Date ngaythamgia) {
+    public Account setNgaythamgia(String ngaythamgia) {
         this.ngaythamgia = ngaythamgia;
         return this;
     }
@@ -119,7 +194,4 @@ public class Account {
         return this;
     }
 
-    public Account createAccount() {
-        return new Account(userId, hoten, email, password, sdt, vi1, vi2, vi3, idNguoiGioiThieu, capbac, luong, hoahong, quanliID, ngaythamgia, status, kind);
-    }
 }

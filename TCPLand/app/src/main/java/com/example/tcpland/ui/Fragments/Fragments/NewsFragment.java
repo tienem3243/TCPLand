@@ -5,11 +5,11 @@ import android.app.Activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -21,12 +21,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import com.example.tcpland.FileHandler.LoadNewsTask;
+import com.example.tcpland.Task.LoadNewsTask;
 import com.example.tcpland.Adapter.NewsAdapter;
 import com.example.tcpland.Model.NewsModel;
 import com.example.tcpland.Model.Node;
 import com.example.tcpland.R;
-import com.example.tcpland.ui.Activity.HomeActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -62,10 +61,7 @@ public class NewsFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.contact_recycleView);
         if(savedInstanceState==null){
             try {
-                myAsyncTask = (LoadNewsTask) new LoadNewsTask(activity, output -> {
-                    load(output);
-
-                }).execute();
+                myAsyncTask = (LoadNewsTask) new LoadNewsTask(activity, this::load).execute();
 
             }catch (Exception e){
                 Log.e("err", "onCreateView: "+e );
@@ -75,7 +71,9 @@ public class NewsFragment extends Fragment {
         return v;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void load(String output) throws IOException {
+        if(output==null) return;
         Log.e("res", "processFinish: "+ output);
         ObjectMapper objectMapper= new ObjectMapper();
         JsonNode jsonNode= objectMapper.readTree(output);
@@ -83,6 +81,7 @@ public class NewsFragment extends Fragment {
                 .get("data")
                 .get("postsConnection")
                 .get("edges"));
+        Log.e("cs",res);
         List<Node> data= objectMapper.readValue(res,new TypeReference<List<Node>>(){});
         Log.e("chad", "processFinish: "+data.get(0).node.getDiaChi());
         List<NewsModel> news= new ArrayList<>();

@@ -5,15 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tcpland.FileHandler.LoadNewsTask;
+import com.example.tcpland.Task.LoadNewsTask;
 import com.example.tcpland.Model.NewsModel;
 import com.example.tcpland.R;
 import com.example.tcpland.ui.Fragments.Fragments.NewsDeepDetail;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".View.Account.Sign_up"
+    tools:context=".View.Account.ui.login.Sign_up"
 
     android:background="@android:color/transparent">
     <LinearLayout

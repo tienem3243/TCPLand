@@ -1,8 +1,5 @@
 package com.example.tcpland.View.Account.data;
 
-import android.util.Log;
-
-import com.example.tcpland.SignInTask;
 import com.example.tcpland.View.Account.data.model.LoggedInUser;
 
 import java.io.IOException;
@@ -17,12 +14,11 @@ public class LoginDataSource {
 
         try {
 
-            SignInTask signInTask = new SignInTask();
-            signInTask.execute(username, password);
+         LoggedInUser loggedInUser = new LoggedInUser(username,username);
+         return new Result.Success<>(loggedInUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Lỗi không xác định", e));
         }
-        return new Result.Error(new IOException("Lỗi không xác định"));
     }
 
     public void logout() {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/trendig_green">
+
+    <TextView
+        android:background="@drawable/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hoten"
+        android:id="@+id/hoten"
+        android:textColor="@color/white"
+        android:layout_weight="0.25"
+        android:gravity="left"/>
+
+    <TextView
+        android:background="@drawable/back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:id="@+id/Id"
+        android:layout_weight="0.25"
+        android:text="id"
+        android:gravity="left"/>
+
+
+
+</TableRow>

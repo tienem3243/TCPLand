@@ -57,5 +57,7 @@
     <string name="invalid_password">Mật khẩu phải trên 5 kí tự</string>
     <string name="login_failed">"Đăng nhập thất bại"</string>
     <string name="null_form">"Không hợp lệ"</string>
+    <string name="nonValidPassRep">Mật khẩu không trùng khớp</string>
+    <string name="SucceedSignUp">Đăng kí thành công</string>
 
 </resources>

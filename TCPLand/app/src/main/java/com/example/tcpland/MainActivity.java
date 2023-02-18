@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.tcpland.Task.LoadTask;
+import com.example.tcpland.Task.SignInTask;
 import com.google.gson.annotations.Expose;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new SignInTask().execute();
+        new LoadTask().execute("0215024202356","u");
         setContentView(R.layout.activity_main4);
 
     }
