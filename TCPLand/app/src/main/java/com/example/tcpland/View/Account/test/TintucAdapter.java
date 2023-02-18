@@ -51,17 +51,17 @@ public class TintucAdapter extends RecyclerView.Adapter<TintucAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-//        Log.e("pos", "onBindViewHolder: "+position);
-//        holder.title.setText(listNews.get(position).getTitle());
-//        Log.e("check", "onBindViewHolder: "+holder.createdAt.toString() );
-//        //holder.id.setText(String.valueOf(listNews.get(position).getId()));
-//        holder.excerpt.setText(listNews.get(position).getExcerpt());
-//        holder.data=listNews.get(position).getContent().html;
-//        holder.createdAt.setText(listNews.get(position).getCreatedAt());
-//        holder.news=listNews.get(position);
-//        Picasso.get()
-//                .load(listNews.get(position).getFeaturedImage().url)
-//                .into(holder.featuredImage);
+        Log.e("pos", "onBindViewHolder: "+position);
+        holder.title.setText(listNews.get(position).getAuthor().name);
+        Log.e("check", "onBindViewHolder: "+holder.createdAt.toString() );
+        //holder.id.setText(String.valueOf(listNews.get(position).getId()));
+        holder.excerpt.setText(listNews.get(position).getExcerpt());
+        holder.data=listNews.get(position).getContent().html;
+        holder.createdAt.setText(listNews.get(position).getCreatedAt());
+
+        Picasso.get()
+                .load(listNews.get(position).getFeaturedImage().url)
+                .into(holder.featuredImage);
     }
 
 

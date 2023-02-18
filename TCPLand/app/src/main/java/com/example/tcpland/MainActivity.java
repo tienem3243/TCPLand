@@ -1,6 +1,9 @@
 package com.example.tcpland;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,7 +11,9 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -32,47 +37,28 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
     View v;
     RecyclerView recyclerView;
-    LoadDuan myAsyncTask;
+    LoadNews myAsyncTask;
     TintucAdapter viewAdapter;
     Activity activity;
-    public class Data{
 
-        public Data(String email, String password) {
-            this.email = email;
-            this.password = password;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        @Expose
-        private String email;
-        @Expose
-        private String password;
-        //Add a constructor and getters + setters
-    }
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        new LoadNews(this, this::load).execute();
-        setContentView(R.layout.activity_main4);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        v = inflater.inflate(R.layout.fragment_product,container,false);
+        recyclerView = (RecyclerView) v.findViewById(R.id.contact_recycleView);
+        if(savedInstanceState==null){
+            try {
+                myAsyncTask = (LoadNews) new LoadNews(getActivity(), this::load).execute();
 
+            }catch (Exception e){
+                Log.e("err", "onCreateView: "+e );
+            }
+        }
+
+        return v;
     }
 
     private void load(String output) throws IOException {
@@ -102,9 +88,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void SetAdapter(List<Tintuc> news) {
-        viewAdapter = new TintucAdapter(this, news);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        viewAdapter = new TintucAdapter(getContext(), news);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @androidx.annotation.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+    @Override
+    public void onCreate(@org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
 
