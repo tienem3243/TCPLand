@@ -1,4 +1,4 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Duan;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,32 +9,31 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import com.example.tcpland.Model.NewsModel;
+import com.example.tcpland.Model.Duan;
 import com.example.tcpland.databinding.FragmentNewsDetailBinding;
 import com.google.android.material.snackbar.Snackbar;
 
-public class News_Detail extends Fragment {
+public class ChiTietDuAn extends Fragment {
     String fomartPattern="%.0f";
 
-    public NewsModel getModel() {
+    public Duan getModel() {
         return model;
     }
 
-    public void setModel(NewsModel model) {
+    public void setModel(Duan model) {
         this.model = model;
     }
 
-    public News_Detail(NewsModel model) {
+    public ChiTietDuAn(Duan model) {
         this.model = model;
     }
 
-    NewsModel model;
+    Duan model;
     FragmentNewsDetailBinding binding;
 
-    public News_Detail() {
+    public ChiTietDuAn() {
         // Required empty public constructor
     }
 
@@ -71,7 +70,9 @@ public class News_Detail extends Fragment {
                 return;
             }
             WebView webView= new WebView(getActivity());
-            webView.loadUrl(model.getGmaplocation());
+            webView.loadUrl("model.getGmaplocation()");
+
+            Log.e("map load", "onCreateView: gmap" );
         });
         return binding.getRoot();
     }

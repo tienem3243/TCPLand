@@ -59,5 +59,9 @@
     <string name="null_form">"Không hợp lệ"</string>
     <string name="nonValidPassRep">Mật khẩu không trùng khớp</string>
     <string name="SucceedSignUp">Đăng kí thành công</string>
+    <string name="thong_tin_lien_he">
+        GtechLand
+        \nĐịa chỉ trụ sở: Số 1 Đặng Văn Sâm, P.9, Q.Phú Nhuận, TP.HCM
+        \nHotline: 028 378 27 888</string>
 
 </resources>

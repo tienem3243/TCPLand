@@ -14,21 +14,21 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class LoadNewsTask extends AsyncTask<String, Void, String> {
+public class LoadNews extends AsyncTask<String, Void, String> {
     Activity activity;
     int first = 0;
     int range = 100;
     //todo optimize load
     public AsyncResponse delegate = null;
 
-    public LoadNewsTask(Activity activity, int first, int range, AsyncResponse delegate) {
+    public LoadNews(Activity activity, int first, int range, AsyncResponse delegate) {
         this.activity = activity;
         this.first = first;
         this.range = range;
         this.delegate = delegate;
     }
 
-    public LoadNewsTask(Activity Activity, AsyncResponse delegate) {
+    public LoadNews(Activity Activity, AsyncResponse delegate) {
         this.delegate = delegate;
         activity = Activity;
     }
@@ -49,8 +49,6 @@ public class LoadNewsTask extends AsyncTask<String, Void, String> {
         String query = LoadData("NewsQuery.txt", activity.getApplicationContext());
         String val = "postsConnection";
         int index = query.indexOf(val);
-
-        query = addString(query, "(skip: " + first + "first:" + range + ")", index + val.length());
         HttpUrl.Builder urlBuilder
                 = HttpUrl.parse("https://api-ap-northeast-1.hygraph.com/v2/clbequozv0gwt01una4fc4di0/master").newBuilder();
         urlBuilder.addQueryParameter("query", query);

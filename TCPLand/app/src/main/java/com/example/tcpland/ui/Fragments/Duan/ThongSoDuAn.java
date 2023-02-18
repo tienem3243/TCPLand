@@ -1,4 +1,4 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Duan;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -20,16 +20,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.tcpland.Model.NewsModel;
+import com.example.tcpland.Model.Duan;
 import com.example.tcpland.R;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class NewsDeepDetail extends Fragment {
+public class ThongSoDuAn extends Fragment {
     FloatingActionButton button;
-    NewsModel news;
-    public NewsDeepDetail(String dataWeb, NewsModel news) {
+    Duan news;
+    public ThongSoDuAn(String dataWeb, Duan news) {
         this.dataWeb = dataWeb;
         this.news= news;
     }
@@ -56,7 +56,7 @@ public class NewsDeepDetail extends Fragment {
                     .getSupportFragmentManager()
                     .beginTransaction()
                     .addToBackStack("second")
-                    .replace(R.id.fragment_container1, new News_Detail(news))
+                    .replace(R.id.fragment_container1, new ChiTietDuAn(news))
                     .commit();
         });
         WebView mWebview =  rootview.findViewById(R.id.webview);

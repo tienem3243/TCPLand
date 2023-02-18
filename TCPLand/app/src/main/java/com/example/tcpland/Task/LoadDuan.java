@@ -14,21 +14,21 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class LoadPostTask extends AsyncTask<String, Void, String> {
+public class LoadDuan extends AsyncTask<String, Void, String> {
     Activity activity;
     int first = 0;
     int range = 100;
     //todo optimize load
     public AsyncResponse delegate = null;
 
-    public LoadPostTask(Activity activity, int first, int range, AsyncResponse delegate) {
+    public LoadDuan(Activity activity, int first, int range, AsyncResponse delegate) {
         this.activity = activity;
         this.first = first;
         this.range = range;
         this.delegate = delegate;
     }
 
-    public LoadPostTask(Activity Activity, AsyncResponse delegate) {
+    public LoadDuan(Activity Activity, AsyncResponse delegate) {
         this.delegate = delegate;
         activity = Activity;
     }

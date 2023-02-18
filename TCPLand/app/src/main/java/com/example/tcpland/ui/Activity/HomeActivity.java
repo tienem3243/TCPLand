@@ -8,24 +8,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
-import com.example.tcpland.ui.Fragments.Fragments.DashBoard;
-import com.example.tcpland.ui.Fragments.Fragments.NewsFragment;
-import com.example.tcpland.ui.Fragments.Fragments.Wallet;
+import com.example.tcpland.ui.Fragments.Fragments.DashBoard.DashBoard;
+import com.example.tcpland.ui.Fragments.Duan.DuAnFragment;
+import com.example.tcpland.ui.Fragments.Fragments.Wallet.Wallet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-    public List<NewsFragment> getNewsList() {
+    public List<DuAnFragment> getNewsList() {
         return newsList;
     }
 
-    public void setNewsList(List<NewsFragment> newsList) {
+    public void setNewsList(List<DuAnFragment> newsList) {
         this.newsList = newsList;
     }
 
-    List<NewsFragment> newsList;
+    List<DuAnFragment> newsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

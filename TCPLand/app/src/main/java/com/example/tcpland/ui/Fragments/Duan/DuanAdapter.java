@@ -1,4 +1,4 @@
-package com.example.tcpland.Adapter;
+package com.example.tcpland.ui.Fragments.Duan;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,10 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tcpland.Task.LoadNewsTask;
-import com.example.tcpland.Model.NewsModel;
+import com.example.tcpland.Task.LoadDuan;
+import com.example.tcpland.Model.Duan;
 import com.example.tcpland.R;
-import com.example.tcpland.ui.Fragments.Fragments.NewsDeepDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -23,18 +22,18 @@ import java.util.List;
  * Created by Mahadi on 3/11/2018.
  */
 
-public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
+public class DuanAdapter extends RecyclerView.Adapter<DuanAdapter.MyViewHolder> {
     Context context;
-    List<NewsModel> listNews;
-    LoadNewsTask taskLoad;
+    List<Duan> listNews;
+    LoadDuan taskLoad;
 
-    public NewsAdapter(Context context, List<NewsModel> listNews, LoadNewsTask load) {
+    public DuanAdapter(Context context, List<Duan> listNews, LoadDuan load) {
         this.context = context;
         this.listNews = listNews;
         this.taskLoad = load;
     }
 
-    public NewsAdapter(Context context, List<NewsModel> newsList) {
+    public DuanAdapter(Context context, List<Duan> newsList) {
         this.context = context;
         this.listNews = newsList;
     }
@@ -78,7 +77,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             TextView excerpt;
             ImageView featuredImage;
             String data;
-            NewsModel news;
+            Duan news;
 
 
         public MyViewHolder(View itemView) {
@@ -95,14 +94,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             Log.e("ss", "onClick: " );
             AppCompatActivity activity = (AppCompatActivity) view.getContext();
             Log.e("dataLoad", "onClick: "+data );
-            NewsDeepDetail webView = new NewsDeepDetail(data,news);
-            if(webView!=null){
-                activity.getSupportFragmentManager()
-                        .beginTransaction()
-                        .addToBackStack("null")
-                        .add(R.id.fragment_container1, webView)
-                        .commit();
-            }
+            ThongSoDuAn webView = new ThongSoDuAn(data,news);
+            activity.getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack("null")
+                    .add(R.id.fragment_container1, webView)
+                    .commit();
 
         }
 

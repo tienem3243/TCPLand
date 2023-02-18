@@ -1,4 +1,4 @@
-package com.example.tcpland.Anim;
+package com.example.tcpland.Animation;
 
 import android.view.View;
 

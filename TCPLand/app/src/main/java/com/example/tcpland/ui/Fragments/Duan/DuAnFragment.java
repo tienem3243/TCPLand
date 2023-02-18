@@ -1,11 +1,10 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Duan;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +20,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import com.example.tcpland.Task.LoadNewsTask;
-import com.example.tcpland.Adapter.NewsAdapter;
-import com.example.tcpland.Model.NewsModel;
-import com.example.tcpland.Model.Node;
+import com.example.tcpland.Task.LoadDuan;
+import com.example.tcpland.Model.Duan;
+import com.example.tcpland.Model.DuanNode;
 import com.example.tcpland.R;
+import com.example.tcpland.ui.Fragments.Fragments.DashBoard.DashBoard;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,17 +39,17 @@ import java.util.List;
  * Use the {@link DashBoard#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NewsFragment extends Fragment {
+public class DuAnFragment extends Fragment {
 
     View v;
     RecyclerView recyclerView;
-    LoadNewsTask myAsyncTask;
-    NewsAdapter  viewAdapter;
+    LoadDuan myAsyncTask;
+    DuanAdapter viewAdapter;
     Activity activity;
-    public NewsFragment() {
+    public DuAnFragment() {
 
     }
-    public NewsFragment(Activity activity) {
+    public DuAnFragment(Activity activity) {
         this.activity=activity;
     }
     @SuppressLint("NotifyDataSetChanged")
@@ -61,7 +60,7 @@ public class NewsFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.contact_recycleView);
         if(savedInstanceState==null){
             try {
-                myAsyncTask = (LoadNewsTask) new LoadNewsTask(activity, this::load).execute();
+                myAsyncTask = (LoadDuan) new LoadDuan(activity, this::load).execute();
 
             }catch (Exception e){
                 Log.e("err", "onCreateView: "+e );
@@ -81,13 +80,11 @@ public class NewsFragment extends Fragment {
                 .get("data")
                 .get("postsConnection")
                 .get("edges"));
-        Log.e("cs",res);
-        List<Node> data= objectMapper.readValue(res,new TypeReference<List<Node>>(){});
-        Log.e("chad", "processFinish: "+data.get(0).node.getDiaChi());
-        List<NewsModel> news= new ArrayList<>();
+        List<DuanNode> data= objectMapper.readValue(res,new TypeReference<List<DuanNode>>(){});
+        List<Duan> news= new ArrayList<>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             news= data.parallelStream()
-                    .map(Node::getNode)
+                    .map(DuanNode::getNode)
                     .collect(Collectors.toList());
             Log.e("testStream", "processFinish: "+news.get(0).getCreatedAt() );
         }
@@ -100,8 +97,8 @@ public class NewsFragment extends Fragment {
         }
     }
 
-    private void SetAdapter(List<NewsModel> news) {
-        viewAdapter = new NewsAdapter(getContext(), news);
+    private void SetAdapter(List<Duan> news) {
+        viewAdapter = new DuanAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
     }

@@ -9,14 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tcpland.Adapter.UserFragmentStateAdapter;
-import com.example.tcpland.Anim.DepthPageTransformer;
+import com.example.tcpland.Animation.DepthPageTransformer;
 import com.example.tcpland.R;
-import com.example.tcpland.databinding.ActivityNavigatorBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class Fragment_user extends Fragment {
@@ -31,7 +29,7 @@ public class Fragment_user extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_main,container,false);
+        View v = inflater.inflate(R.layout.user,container,false);
 
         this.viewPager2=v.findViewById(R.id.viewPager2_employee);
         // Employee FragmentStateAdapter.

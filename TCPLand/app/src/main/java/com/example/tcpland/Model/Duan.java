@@ -2,8 +2,8 @@ package com.example.tcpland.Model;
 
 import java.util.Arrays;
 
-public class NewsModel {
-    public NewsModel() {
+public class Duan {
+    public Duan() {
 
     }
 
@@ -88,8 +88,8 @@ public class NewsModel {
                 + Arrays.toString(categories) + "]";
     }
 
-    public NewsModel(Author author, String createdAt, String slug, String title, String excerpt, FeaturedImage featuredImage,
-					 Content content, Project[] categories) {
+    public Duan(Author author, String createdAt, String slug, String title, String excerpt, FeaturedImage featuredImage,
+				Content content, Project[] categories) {
         super();
         this.author = author;
         this.createdAt = createdAt;

@@ -1,4 +1,4 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments.Tutorial;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tcpland.Adapter.TutorialAdapter;
 import com.example.tcpland.Model.TutorialModel;
 import com.example.tcpland.R;
+import com.example.tcpland.ui.Fragments.Fragments.DashBoard.DashBoard;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -23,13 +24,13 @@ import java.util.List;
  * Use the {@link DashBoard#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tutorial extends Fragment {
+public class TinTucDoanhNghiep extends Fragment {
 
     View v;
     RecyclerView recyclerView;
     List<TutorialModel> listCont;
 
-    public Tutorial() {
+    public TinTucDoanhNghiep() {
 
     }
 

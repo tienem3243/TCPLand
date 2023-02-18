@@ -1,4 +1,4 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments.DashBoard;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,13 @@ import androidx.fragment.app.Fragment;
 import com.example.tcpland.Adapter.DashBoardAdapter;
 import com.example.tcpland.Model.ItemModel;
 import com.example.tcpland.R;
-import com.example.tcpland.View.Account.data.LoginRepository;
+import com.example.tcpland.ui.Fragments.Fragments.Contract;
+import com.example.tcpland.ui.Fragments.Fragments.My_real_estate;
+import com.example.tcpland.ui.Fragments.Fragments.Question;
+import com.example.tcpland.ui.Fragments.Fragments.Social_Media;
+import com.example.tcpland.ui.Fragments.Fragments.Tcp_land_fund;
+import com.example.tcpland.ui.Fragments.Fragments.Tutorial.TinTucDoanhNghiep;
+import com.example.tcpland.ui.Fragments.Duan.DuAnFragment;
 
 import java.util.ArrayList;
 
@@ -120,8 +126,8 @@ public class DashBoard extends Fragment {
         dashBoardGridItemList.add(new ItemModel("Quỹ đất Toàn Cầu Land", R.drawable.ic_fun_tcl,new Tcp_land_fund()));
         dashBoardGridItemList.add(new ItemModel("BĐS của tôi", R.drawable.ic_my_real_estate,new My_real_estate()));
         dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract,new Contract()));
-        dashBoardGridItemList.add(new ItemModel("Hướng dẫn", R.drawable.ic_consultants,new Tutorial()));
-        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new NewsFragment( getActivity())));
+        dashBoardGridItemList.add(new ItemModel("Hướng dẫn", R.drawable.ic_consultants,new TinTucDoanhNghiep()));
+        dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news,new DuAnFragment( getActivity())));
         dashBoardGridItemList.add(new ItemModel("Câu hỏi thường gặp", R.drawable.ic_questions,new Question()));
         dashBoardGridItemList.add(new ItemModel("Mạng xã hội", R.drawable.ic_social_media,new Social_Media()));
         DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);

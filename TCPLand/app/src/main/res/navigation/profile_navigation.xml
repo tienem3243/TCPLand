@@ -10,7 +10,7 @@
         android:id="@+id/nav_gallery"
         android:name="com.example.tcpland.ui.Fragments.Fragments.Fragment_user"
         android:label="Thông tin dự án"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/user" />
 
     <fragment
         android:id="@+id/nav_slideshow"

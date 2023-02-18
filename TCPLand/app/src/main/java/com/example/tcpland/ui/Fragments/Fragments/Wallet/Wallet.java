@@ -1,9 +1,7 @@
-package com.example.tcpland.ui.Fragments.Fragments;
+package com.example.tcpland.ui.Fragments.Fragments.Wallet;
 
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
 import com.example.tcpland.databinding.WalletFragmentBinding;
-
-import java.util.Objects;
+import com.example.tcpland.ui.Fragments.Duan.DuAnFragment;
 
 
 public class Wallet extends Fragment {
@@ -42,8 +39,8 @@ public class Wallet extends Fragment {
      * @return A new instance of fragment AlgorithmFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static NewsFragment newInstance(String param1, String param2) {
-        NewsFragment fragment = new NewsFragment();
+    public static DuAnFragment newInstance(String param1, String param2) {
+        DuAnFragment fragment = new DuAnFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
