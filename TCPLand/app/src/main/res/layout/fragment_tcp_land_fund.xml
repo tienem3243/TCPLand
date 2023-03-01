@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ui.Fragments.Fragments.Tcp_land_fund">
+    tools:context=".Page.Fragments.Fragments.Tcp_land_fund">
 
     <TextView
         android:layout_width="wrap_content"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@color/trendig_green">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/deposit"
@@ -34,14 +34,10 @@
             android:layout_marginEnd="-1dp"
             android:src="@drawable/logo_new" />
 
-
-
-            >
-
         <ScrollView
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="100dp"
             android:layout_above="@+id/bottom_navigation"
             android:layout_below="@+id/image"
             android:layout_centerHorizontal="true"
@@ -49,10 +45,6 @@
             android:background="#00000000"
             android:fitsSystemWindows="true"
             android:padding="11dp" />
-
-
-
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"

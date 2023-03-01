@@ -22,7 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.tcpland.Task.SignInTask;
 import com.example.tcpland.R;
 import com.example.tcpland.databinding.ActivityLoginBinding;
-import com.example.tcpland.ui.Activity.HomeActivity;
+import com.example.tcpland.Page.Activity.HomeActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -113,6 +113,9 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     Log.e("log", "onCreate: "+signInTask.getAccountInfo() );
                     intent.putExtra("userInfo",signInTask.getAccountInfo());
+                    intent.putExtra("username",signInTask.getAccountInfo().getEmail());
+                    intent.putExtra("password",signInTask.getAccountInfo().getPassword());
+                    intent.putExtra("email",signInTask.getAccountInfo().getEmail());
                     LoginActivity.this.startActivity(intent);
                 });
                 loadingProgressBar.setVisibility(View.VISIBLE);

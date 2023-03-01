@@ -1,6 +1,6 @@
 package com.example.tcpland.Model;
 
-import com.example.tcpland.View.Account.test.Tintuc;
+import com.example.tcpland.View.Account.Tintuc.Tintuc;
 
 public class NewsNode {
 

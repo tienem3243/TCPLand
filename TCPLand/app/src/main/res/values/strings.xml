@@ -63,5 +63,9 @@
         GtechLand
         \nĐịa chỉ trụ sở: Số 1 Đặng Văn Sâm, P.9, Q.Phú Nhuận, TP.HCM
         \nHotline: 028 378 27 888</string>
+    <string name="soluong">Số lượng</string>
+    <string name="mota">Mô tả</string>
+    <string name="thongtinnap">NGÂN HÀNG: NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN Á CHÂU (ACB) \nCHỦ TÀI KHOẢN: CÔNG TY CỔ PHẦN CÔNG NGHỆ TOÀN CẦU LAND \nSỐ TÀI KHOẢN: 87995687 \nNỘI DUNG: (SỐ ĐIỆN THOẠI) - (ID NGƯỜI DÙNG)</string>
+    <string name="UserInfo">userinfo</string>
 
 </resources>

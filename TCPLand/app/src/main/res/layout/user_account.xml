@@ -7,7 +7,6 @@
     android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".View.Account.ui.login.Sign_up"
-
     android:background="@android:color/transparent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,20 +30,20 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/userID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:text="ID Dự án">
+                android:text="ID">
             </TextView>
-            <androidx.appcompat.widget.AppCompatEditText
+            <TextView
+                android:id="@+id/userID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-
+                android:padding="10dp"
                 android:background="@drawable/rectangle_2"
                 android:hint="Vd: 23123123"
                 android:inputType="textEmailAddress"
@@ -69,7 +68,9 @@
                 android:textColor="@color/white"
                 android:text="Email">
             </TextView>
-            <androidx.appcompat.widget.AppCompatEditText
+            <TextView
+                android:id="@+id/emailView"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
@@ -101,7 +102,9 @@
                     android:text="SDT">
                 </TextView>
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <TextView
+                    android:id="@+id/sdt"
+                    android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -134,7 +137,9 @@
                     android:text="Họ tên">
                 </TextView>
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <TextView
+                    android:id="@+id/hotenUser"
+                    android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -159,7 +164,9 @@
                     android:text="Trực thuộc">
                 </TextView>
 
-                <androidx.appcompat.widget.AppCompatEditText
+                <TextView
+                    android:id="@+id/tructhuoc"
+                    android:padding="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -185,47 +192,23 @@
                 android:text="Cấp bậc">
             </TextView>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/rectangle_10"
-                android:hint="Vd: 32314"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:textStyle="normal"
-                android:typeface="sans" />
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="Số dư ví 1">
-            </TextView>
-
-            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/capbac"
+                android:padding="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/rectangle_10"
                 android:hint="Vd: 32314"
-                android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:textStyle="normal"
                 android:typeface="sans" />
         </LinearLayout>
+
+
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

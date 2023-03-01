@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bg"
-    tools:context=".ui.Fragments.Fragments.Consultants">
+    tools:context=".Page.Fragments.Fragments.Consultants">
 
     <TextView
         android:layout_width="wrap_content"

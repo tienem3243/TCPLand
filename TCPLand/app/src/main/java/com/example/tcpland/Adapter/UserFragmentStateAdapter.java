@@ -1,14 +1,12 @@
 package com.example.tcpland.Adapter;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tcpland.ui.Fragments.Fragment1;
-import com.example.tcpland.ui.Fragments.Fragment2;
+import com.example.tcpland.Page.Fragments.UserFragmt;
+import com.example.tcpland.Page.Fragments.Fragment2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ public class UserFragmentStateAdapter extends FragmentStateAdapter {
 
     private List<Fragment> InitData() {
         List<Fragment> userManager=new ArrayList<>();
-        userManager.add(new Fragment1());
+        userManager.add(new UserFragmt());
         userManager.add(new Fragment2());
         return userManager;
     }
@@ -37,7 +35,7 @@ public class UserFragmentStateAdapter extends FragmentStateAdapter {
         if(userManagerList.get(position)!=null)
        return userManagerList.get(position);
         else
-            return new Fragment1();
+            return new UserFragmt();
     }
 
 

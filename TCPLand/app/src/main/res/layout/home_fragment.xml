@@ -1,17 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_container1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:layout_gravity="center">
-    <GridView
-        android:id="@+id/grid_container"
-        android:layout_centerHorizontal="true"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/trendig_green"
+    android:padding="10dp">
+    <HorizontalScrollView
+        android:id="@+id/horizontal_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </HorizontalScrollView>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:horizontalSpacing="6dp"
-        android:numColumns="3"
-        android:verticalSpacing="6dp" />
-</RelativeLayout>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tin tức"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+            </TextView>
+            <ScrollView
+                android:id="@+id/newsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ScrollView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dự án"
+                android:textColor="@color/white"
+                android:textSize="30dp">
+            </TextView>
+            <ScrollView
+                android:id="@+id/duAn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:clickable="true"
     android:background="@drawable/bg"
-    tools:context=".ui.Fragments.Duan.ChiTietDuAn">
+    tools:context=".Page.Fragments.Duan.ChiTietDuAn">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

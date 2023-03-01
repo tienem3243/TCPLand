@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent"
+    tools:context=".Page.Fragments.Fragments.Test">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contact_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_ripple">
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

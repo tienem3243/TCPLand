@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context=".ui.Fragments.Fragments.Social_Media">
+    tools:context=".Page.Fragments.Fragments.Social_Media">
 <LinearLayout
     android:padding="20dp"
     android:layout_width="match_parent"
