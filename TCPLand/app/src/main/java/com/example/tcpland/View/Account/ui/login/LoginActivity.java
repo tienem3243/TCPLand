@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     Log.e("log", "onCreate: "+signInTask.getAccountInfo() );
                     intent.putExtra("userInfo",signInTask.getAccountInfo());
-                    intent.putExtra("username",signInTask.getAccountInfo().getEmail());
+                    intent.putExtra("userid",signInTask.getAccountInfo().getUserId());
                     intent.putExtra("password",signInTask.getAccountInfo().getPassword());
                     intent.putExtra("email",signInTask.getAccountInfo().getEmail());
                     LoginActivity.this.startActivity(intent);

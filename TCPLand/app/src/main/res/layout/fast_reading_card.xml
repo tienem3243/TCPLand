@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="20dp"
+    android:layout_margin="10dp"
     android:layout_width="match_parent"
-    android:layout_height="165dp"
+    android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:background="@drawable/rectangle_4">
+    android:background="@drawable/rectangle_white_solid">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,12 +17,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/chitietnaptien"
+            android:id="@+id/context"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Content"
-            android:textColor="#fff"
-            android:textStyle="bold" />
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

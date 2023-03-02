@@ -129,7 +129,7 @@ public class Chitietnaprut {
                 "Mô tả rút: "+ mota_rut;
         String thu="Số tiền thu: " + sotien_thu +"\n"+
                 "Mô tả thu:"  + mota_thu;
-        String chi=  ", Số tiền chi=" + sotien_chi +"\n"+
+        String chi=  "Số tiền chi=" + sotien_chi +"\n"+
                 "Mô tả chi: " + mota_chi;
         String res="";
         if(!(sotien_nap ==null)){

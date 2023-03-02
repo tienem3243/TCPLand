@@ -1,4 +1,4 @@
-package com.example.tcpland.Page.Fragments;
+package com.example.tcpland.Page.Taisan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
 
-public class Fragment2 extends Fragment {
+public class TeamUserTaisan extends Fragment {
 
-    public Fragment2() {
+    public TeamUserTaisan() {
         // required empty public constructor.
     }
 

@@ -47,20 +47,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/white" />
 
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="301dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="21dp"
-                android:layout_toEndOf="@+id/daily_val1"
-                android:background="@android:color/transparent"
-                android:src="@drawable/back_icon">
-
-            </ImageButton>
-
             <TextView
                 android:id="@+id/currency3"
 
@@ -119,19 +105,7 @@
                 android:textColor="@color/white">
 
             </TextView>
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="301dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="21dp"
-                android:layout_toEndOf="@+id/total_val1"
-                android:background="@android:color/transparent"
-                android:src="@drawable/back_icon">
 
-            </ImageButton>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/total_profit_val"
@@ -180,19 +154,7 @@
 
             </TextView>
 
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="301dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="21dp"
-                android:layout_toEndOf="@+id/total_profit_val1"
-                android:background="@android:color/transparent"
-                android:src="@drawable/back_icon">
 
-            </ImageButton>
         </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -202,44 +164,10 @@
         android:paddingRight="10dp"
         android:layout_gravity="center">
 
-        <RelativeLayout
-            android:layout_width="204dp"
-            android:layout_height="97dp"
-
-            android:layout_marginEnd="4dp"
-            android:background="@drawable/rectangle_round"
-            android:elevation="11dp"
-            android:orientation="horizontal"
-            android:padding="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
-            <ImageView
-                android:id="@+id/ic_deposit"
-                android:layout_width="48dp"
-                android:layout_height="53dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_deposit3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="53dp"
-                android:layout_marginTop="25dp"
-                android:layout_toRightOf="@+id/ic_deposit"
-                android:text="Nạp tiền"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                android:textStyle="bold"></TextView>
-
-
-        </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="172dp"
+            android:id="@+id/button_goLichsu"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"
 
@@ -251,26 +179,25 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/ic_with_draw"
-                android:layout_width="48dp"
-                android:layout_height="53dp"
-                android:layout_centerVertical="true"
-                android:contentDescription="TODO"
-                android:src="@drawable/ic_with_draw" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="34dp"
+                android:layout_toRightOf="@+id/goLichsu"
                 android:layout_marginTop="25dp"
-                android:layout_toRightOf="@+id/ic_with_draw"
-                android:text="Rút tiền"
+                android:text="Lịch sử giao dịch"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/goLichsu"
+                android:layout_width="48dp"
+                android:layout_height="53dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="TODO"
+                android:src="@drawable/back_icon" />
+
+
 
 
         </RelativeLayout>

@@ -8,13 +8,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.tcpland.Page.Fragments.Fragments.Fragment_user"
-        android:label="Thông tin dự án"
+        android:name="com.example.tcpland.Page.Taisan.TaisanPager"
+        android:label="Tài sản cá nhân"
         tools:layout="@layout/user" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.tcpland.Page.Fragments.Slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Tài sản nhóm"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

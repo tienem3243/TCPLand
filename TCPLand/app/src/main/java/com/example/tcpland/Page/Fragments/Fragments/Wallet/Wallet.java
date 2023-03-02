@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.tcpland.R;
+import com.example.tcpland.Vi.Vi_Fragment;
 import com.example.tcpland.databinding.WalletFragmentBinding;
 import com.example.tcpland.Page.Fragments.Duan.DuAnFragment;
 
@@ -64,7 +66,16 @@ public class Wallet extends Fragment {
         TextView vi1= binding.vi1;
         TextView vi2= binding.vi2;
         TextView vi3= binding.vi3;
-        
-        return inflater.inflate(R.layout.wallet_fragment, container, false);
+        RelativeLayout layout=binding.buttonGoLichsu;
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new Vi_Fragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+        return binding.getRoot();
     }
 }

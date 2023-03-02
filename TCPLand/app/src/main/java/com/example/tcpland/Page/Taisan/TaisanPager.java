@@ -1,4 +1,4 @@
-package com.example.tcpland.Page.Fragments.Fragments;
+package com.example.tcpland.Page.Taisan;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class Fragment_user extends Fragment {
+public class TaisanPager extends Fragment {
 
     private ViewPager2 viewPager2;
 
@@ -44,10 +44,10 @@ public class Fragment_user extends Fragment {
                 (tab, position) -> {
                     switch (position){
                         case 0:
-                            tab.setText("User");
+                            tab.setText("Tài sản cá nhân");
                             break;
                         case 1:
-                            tab.setText("Thông tin nền");
+                            tab.setText("Tài sản nhóm");
                             break;
                     }
                 }

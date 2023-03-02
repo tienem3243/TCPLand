@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class LoadViTest extends AsyncTask<String, Void, String> {
+public class LoadTaisan extends AsyncTask<String, Void, String> {
     public Data getLoad() {
         return load;
     }
@@ -53,11 +53,11 @@ public class LoadViTest extends AsyncTask<String, Void, String> {
          void get(String e) throws IOException;
     }
 
-    public LoadViTest(Data data) {
+    public LoadTaisan(Data data) {
         this.load = data;
     }
 
-    public LoadViTest() {
+    public LoadTaisan() {
     }
 
     @Override

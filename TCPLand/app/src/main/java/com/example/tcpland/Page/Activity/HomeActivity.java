@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.tcpland.Page.Taisan.Profile;
 import com.example.tcpland.R;
 import com.example.tcpland.View.Account.ui.login.LoginActivity;
 import com.example.tcpland.Page.Fragments.Fragments.DashBoard.DashBoard;
@@ -42,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
 
         data.setEmail(intent.getSerializableExtra("email").toString());
             data.setPassword(intent.getSerializableExtra("password").toString());
-            data.setUsername(intent.getSerializableExtra("username").toString());
+            data.setUserid(intent.getSerializableExtra("userid").toString());
         }
 
 

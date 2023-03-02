@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".View.Account.ui.login.Sign_up"
+    tools:context=".Page.Taisan.TaisanFragment">
 
-    android:background="@android:color/transparent">
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </TextView>
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/datalistTaisan"
+        android:id="@+id/datalist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/custom_ripple">
     </androidx.recyclerview.widget.RecyclerView>
-
 </LinearLayout>

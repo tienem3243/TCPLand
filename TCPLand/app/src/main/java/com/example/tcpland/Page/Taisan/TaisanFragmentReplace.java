@@ -1,4 +1,4 @@
-package com.example.tcpland.View.Account;
+package com.example.tcpland.Page.Taisan;
 
 import android.os.Bundle;
 
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.tcpland.R;
 
 
-public class Profile extends AppCompatActivity {
+public class TaisanFragmentReplace extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

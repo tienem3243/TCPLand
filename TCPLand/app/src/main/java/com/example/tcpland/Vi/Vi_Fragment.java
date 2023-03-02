@@ -1,10 +1,14 @@
 package com.example.tcpland.Vi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,22 +25,33 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Set;
 
-public class Vi_test extends Fragment {
+public class Vi_Fragment extends Fragment {
     List<Chitietnaprut> data;
     RecyclerView recyclerView;
     ChitietnaprutAdapter viewAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        BigDecimal tongthu=BigDecimal.ZERO;
-        BigDecimal tongchi = BigDecimal.ZERO;
-        BigDecimal tongnap = BigDecimal.ZERO;
-        BigDecimal tongrut = BigDecimal.ZERO;
-
+        Intent intent= requireActivity().getIntent();
+        String userID=intent.getSerializableExtra("userid").toString().replaceAll("[^a-zA-Z0-9]","");
+        Log.e("testExtra", "onCreateView: "+userID );
+        View v = inflater.inflate(R.layout.activity_vi_test,container,false);
+        ProgressBar progressBar= v.findViewById(R.id.loadingVi);
         LoadViTest loadViTest=new LoadViTest();
+        loadViTest.setGo(new LoadViTest.Data() {
+            @Override
+            public void get(String e) {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        });
         loadViTest.setQuerry("https://gtechland.herokuapp.com/api/getvinaprutuser");
+        loadViTest.setErr(new LoadViTest.Data() {
+            @Override
+            public void get(String e) {
+                Toast.makeText(getActivity(),e,Toast.LENGTH_LONG).show();
+            }
+        });
         loadViTest.getResult((String e)->{
 
             ObjectMapper objectMapper= new ObjectMapper();
@@ -51,22 +66,32 @@ public class Vi_test extends Fragment {
                 data= objectMapper.readValue(res,new TypeReference<List<Chitietnaprut>>(){});
                 for(Chitietnaprut chitietnaprut:data){
                     Log.e("checksum", "onCreate: "+chitietnaprut.getSotien_nap() );
-                    tongnapRes=  tongnap.add(chitietnaprut.getSotien_nap());
-                    tongrutRes=tongrut.add(chitietnaprut.getSotien_rut());
-                    tongthuRes=tongthu.add(chitietnaprut.getSotien_thu());
-                    tongchiRes=tongchi.add(chitietnaprut.getSotien_chi());
+                    tongnapRes=  tongnapRes.add(chitietnaprut.getSotien_nap());
+                    tongrutRes=tongrutRes.add(chitietnaprut.getSotien_rut());
+                    tongthuRes=tongthuRes.add(chitietnaprut.getSotien_thu());
+                    tongchiRes=tongchiRes.add(chitietnaprut.getSotien_chi());
                 }
+                TextView tongnap=v.findViewById(R.id.tongnap);
+                tongnap.setText(String.valueOf(tongnapRes));
+                TextView tongrut=v.findViewById(R.id.tongrut);
+                tongrut.setText(String.valueOf(tongrutRes));
+                TextView tongthu=v.findViewById(R.id.tongthu);
+                tongthu.setText(String.valueOf(tongthuRes));
+                TextView tongchi=v.findViewById(R.id.tongchi);
+                tongchi.setText(String.valueOf(tongchiRes));
 
+                recyclerView = (RecyclerView) v.findViewById(R.id.lich_su_nap_frmt);
+                SetAdapter(data);
                 Log.e("testvi", "result"+e +"\n"+tongnapRes+"\n"+tongrutRes+"\n"+tongthuRes+"\n"+tongchiRes);
+                progressBar.setVisibility(View.GONE);
             } catch (IOException ex) {
                 ex.printStackTrace();
+                Toast.makeText(getContext(),ex.toString(),Toast.LENGTH_LONG).show();
             }
 
         });
-        loadViTest.execute("0930028202355","u");
-        View v = inflater.inflate(R.layout.activity_vi_test,container,false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.lich_su_nap_frmt);
 
+        loadViTest.execute(userID,"u");
         return v;
     }
     private void SetAdapter(List<Chitietnaprut> news) {

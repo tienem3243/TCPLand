@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class DataStored {
     public DataStored(String username, String password, String email) {
-        this.username = username;
+        this.userid = username;
         this.password = password;
         this.email = email;
     }
@@ -12,8 +12,8 @@ public class DataStored {
 
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserid() {
+        return userid;
     }
 
     public String getPassword() {
@@ -24,11 +24,11 @@ public class DataStored {
         return email;
     }
     public boolean isUsable(){
-        return !Objects.equals(username, "") && !Objects.equals(password, "")  && !Objects.equals(email, "");
+        return !Objects.equals(userid, "") && !Objects.equals(password, "")  && !Objects.equals(email, "");
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public void setPassword(String password) {
@@ -39,7 +39,7 @@ public class DataStored {
         this.email = email;
     }
 
-    String username="";
+    String userid ="";
     String password="";
     String email="";
 }

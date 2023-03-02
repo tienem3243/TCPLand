@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:padding="20dp"
+    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="165dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="@drawable/rectangle_4">
+    android:layout_margin="10dp"
+    android:background="@drawable/rectangle">
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/featuredImage"
         android:layout_width="134dp"
@@ -15,7 +17,7 @@
         android:padding="3dp"
         android:background="@drawable/rectangle"
         android:src="@drawable/avatar"
-        app:shapeAppearanceOverlay="@style/RectangleRound"></com.google.android.material.imageview.ShapeableImageView>
+        app:shapeAppearanceOverlay="@style/RectangleRound" />
 
     <LinearLayout
         android:layout_width="224dp"
