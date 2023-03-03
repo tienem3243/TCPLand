@@ -113,7 +113,7 @@ public class Chitietnaprut {
 
     @Override
     public String toString() {
-        String res="id_user:" + id_user + '\n' +
+        String res="ID: " + id_user + '\n' +
                 "Ngày giao dịch: " + ngaynaprut + '\n' +
                 "Số dư tài khoản 1: " + tk_1_money + '\n' +
                 "Số dư tài khoản 2: " + tk_2_money + '\n' +
@@ -132,16 +132,16 @@ public class Chitietnaprut {
         String chi=  "Số tiền chi=" + sotien_chi +"\n"+
                 "Mô tả chi: " + mota_chi;
         String res="";
-        if(!(sotien_nap ==null)){
+        if(!sotien_nap.equals(BigDecimal.ZERO)){
             res+=nap+"\n";
         }
-        if(!(sotien_rut ==null)){
+        if(!sotien_rut.equals(BigDecimal.ZERO)){
             res+=rut+"\n";
         }
-        if(!(sotien_thu ==null)){
+        if(!sotien_thu.equals(BigDecimal.ZERO)){
             res+=thu+"\n";
         }
-        if(!(sotien_chi ==null)){
+        if(!sotien_chi.equals(BigDecimal.ZERO)){
             res+=chi+"\n";
         }
         return res;

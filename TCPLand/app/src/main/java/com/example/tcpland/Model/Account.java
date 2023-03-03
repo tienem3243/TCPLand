@@ -1,13 +1,12 @@
 package com.example.tcpland.Model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Account implements Serializable {
     @Override
     public String toString() {
         return "Account{" +
-                "userId='" + userId + '\'' +
+                "userId='" + id_user + '\'' +
                 ", hoten='" + hoten + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
@@ -28,8 +27,8 @@ public class Account implements Serializable {
     public Account (){
 
     }
-    public String getUserId() {
-        return userId;
+    public String getId_user() {
+        return id_user;
     }
 
     public String getHoten() {
@@ -49,14 +48,17 @@ public class Account implements Serializable {
     }
 
     public Vi getVi1() {
+        if(vi1==null) return  new Vi();
         return vi1;
     }
 
     public Vi getVi2() {
+        if(vi2==null) return  new Vi();
         return vi2;
     }
 
     public Vi getVi3() {
+        if(vi3==null) return  new Vi();
         return vi3;
     }
 
@@ -92,7 +94,7 @@ public class Account implements Serializable {
         return kind;
     }
 
-    String userId="";
+    String id_user ="";
     String hoten="";
     String email="";
     String password="";
@@ -109,13 +111,63 @@ public class Account implements Serializable {
     String ngaythamgia="";
     String status="";
     String kind="";
+    String stk;
+    String nganhang;
+    String chu_tk;
+    public Account(String id_user, String hoten, String email, String password, String sdt, Vi vi1, Vi vi2, Vi vi3, String idNguoiGioiThieu, String tructhuoc_id, int capbac, Double luong, Double hoahong, String quanliID, String ngaythamgia, String status, String kind, String stk, String nganhang, String chu_tk) {
+        this.id_user = id_user;
+        this.hoten = hoten;
+        this.email = email;
+        this.password = password;
+        this.sdt = sdt;
+        this.vi1 = vi1;
+        this.vi2 = vi2;
+        this.vi3 = vi3;
+        this.idNguoiGioiThieu = idNguoiGioiThieu;
+        this.tructhuoc_id = tructhuoc_id;
+        this.capbac = capbac;
+        this.luong = luong;
+        this.hoahong = hoahong;
+        this.quanliID = quanliID;
+        this.ngaythamgia = ngaythamgia;
+        this.status = status;
+        this.kind = kind;
+        this.stk = stk;
+        this.nganhang = nganhang;
+        this.chu_tk = chu_tk;
+    }
+
+    public String getStk() {
+        return stk;
+    }
+
+    public void setStk(String stk) {
+        this.stk = stk;
+    }
+
+    public String getNganhang() {
+        return nganhang;
+    }
+
+    public void setNganhang(String nganhang) {
+        this.nganhang = nganhang;
+    }
+
+    public String getChu_tk() {
+        return chu_tk;
+    }
+
+    public void setChu_tk(String chu_tk) {
+        this.chu_tk = chu_tk;
+    }
+
 
     public Account setTructhuoc_id(String tructhuoc_id) {
         this.tructhuoc_id = tructhuoc_id;
         return this;
     }
-    public Account setUserId(String userId) {
-        this.userId = userId;
+    public Account setId_user(String id_user) {
+        this.id_user = id_user;
         return this;
     }
 

@@ -1,4 +1,4 @@
-package com.example.tcpland.Vi;
+package com.example.tcpland.Page.Taisan;
 
 
 import android.content.Context;
@@ -20,24 +20,24 @@ import java.util.List;
  * Created by Mahadi on 3/11/2018.
  */
 
-public class ChitietnaprutAdapter extends RecyclerView.Adapter<ChitietnaprutAdapter.MyViewHolder> {
+public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapter.MyViewHolder> {
     Context context;
-    List<Chitietnaprut> chitietnaprutList;
+    List<Taisan> dataList;
     LoadViTest taskLoad;
 
-    public ChitietnaprutAdapter(Context context, List<Chitietnaprut> listNews, LoadViTest load) {
+    public TaisancanhanAdapter(Context context, List<Taisan> listNews, LoadViTest load) {
         this.context = context;
-        this.chitietnaprutList = listNews;
+        this.dataList = listNews;
         this.taskLoad = load;
     }
 
-    public ChitietnaprutAdapter(Context context, List<Chitietnaprut> newsList) {
+    public TaisancanhanAdapter(Context context, List<Taisan> newsList) {
         this.context = context;
-        this.chitietnaprutList = newsList;
+        this.dataList = newsList;
     }
 
     @Override
-    public ChitietnaprutAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TaisancanhanAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.e("oncreat", "onCreateViewHolder: " );
         View v;
         v = LayoutInflater.from(context).inflate(R.layout.fast_reading_card, parent, false);
@@ -46,18 +46,18 @@ public class ChitietnaprutAdapter extends RecyclerView.Adapter<ChitietnaprutAdap
     }
 
     @Override
-    public void onBindViewHolder(ChitietnaprutAdapter.MyViewHolder holder, int position) {
-        Log.e("pos", "onBindViewHolder: "+position);
-        holder.id.setText(chitietnaprutList.get(position).getId_user());
-        holder.ngaygiaodich.setText(chitietnaprutList.get(position).getNgaynaprut());
-        holder.content.setText(chitietnaprutList.get(position).toString());
+    public void onBindViewHolder(TaisancanhanAdapter.MyViewHolder holder, int position) {
+        Log.e("testList", "onBindViewHolder: "+dataList.get(position).getNgaymua());
+        holder.id.setText(dataList.get(position).getId_user());
+        holder.content.setText(dataList.get(position).toString());
+        holder.ngaygiaodich.setText(dataList.get(position).getNgaymua());
     }
 
 
 
     @Override
     public int getItemCount() {
-        return chitietnaprutList.size();
+        return dataList.size();
     }
 
 
@@ -91,7 +91,5 @@ public class ChitietnaprutAdapter extends RecyclerView.Adapter<ChitietnaprutAdap
 
             Log.e("visible click", "onClick: " );
         }
-
-
     }
 }

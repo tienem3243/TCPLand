@@ -71,14 +71,15 @@ public class Vi_Fragment extends Fragment {
                     tongthuRes=tongthuRes.add(chitietnaprut.getSotien_thu());
                     tongchiRes=tongchiRes.add(chitietnaprut.getSotien_chi());
                 }
+                String currency="VND";
                 TextView tongnap=v.findViewById(R.id.tongnap);
-                tongnap.setText(String.valueOf(tongnapRes));
+                tongnap.setText(String.valueOf(tongnapRes+" "+currency));
                 TextView tongrut=v.findViewById(R.id.tongrut);
-                tongrut.setText(String.valueOf(tongrutRes));
+                tongrut.setText(String.valueOf(tongrutRes+" "+currency));
                 TextView tongthu=v.findViewById(R.id.tongthu);
-                tongthu.setText(String.valueOf(tongthuRes));
+                tongthu.setText(String.valueOf(tongthuRes+" "+currency));
                 TextView tongchi=v.findViewById(R.id.tongchi);
-                tongchi.setText(String.valueOf(tongchiRes));
+                tongchi.setText(String.valueOf(tongchiRes+" "+currency));
 
                 recyclerView = (RecyclerView) v.findViewById(R.id.lich_su_nap_frmt);
                 SetAdapter(data);

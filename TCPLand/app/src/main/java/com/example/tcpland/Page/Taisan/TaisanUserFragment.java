@@ -25,11 +25,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.List;
 
-public class TaisanUser extends Fragment {
+public class TaisanUserFragment extends Fragment {
     List<Taisan> data;
     RecyclerView recyclerView;
-    TaisanListAdapter viewAdapter;
-    public TaisanUser() {
+    TaisancanhanAdapter viewAdapter;
+    public TaisanUserFragment() {
         // required empty public constructor.
     }
 
@@ -50,12 +50,12 @@ public class TaisanUser extends Fragment {
         TextView Hoten=v.findViewById(R.id.hotenUser);
         TextView tructhuoc=v.findViewById(R.id.tructhuoc);
         TextView capbac=v.findViewById(R.id.capbac);
-        id.setText(account.getUserId());
-        email.setText(account.getEmail());
-        SDT.setText(account.getSdt());
-        Hoten.setText(account.getHoten());
-        tructhuoc.setText(account.getIdNguoiGioiThieu());
-        capbac.setText(String.valueOf(account.getCapbac()));
+        id.setText(account.getId_user().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        email.setText(account.getEmail().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        SDT.setText(account.getSdt().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        Hoten.setText(account.getHoten().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        tructhuoc.setText(account.getIdNguoiGioiThieu().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        capbac.setText(String.valueOf(account.getCapbac()).replaceAll("[^a-zA-Z0-9]","").replace("null",""));
         return v;
     }
 
@@ -63,6 +63,7 @@ public class TaisanUser extends Fragment {
 
         if(s !=null){
           DataStored dataStored = new DataStored();
+
           account = (Account)getActivity().getIntent().getSerializableExtra("userInfo");
             LoadTaisan loadViTest= new LoadTaisan();
             loadViTest.setQuerry("https://gtechland.herokuapp.com/api/gettaisanuser");
@@ -88,13 +89,14 @@ public class TaisanUser extends Fragment {
                     }
                 }
             });
+            Log.e("testAccount", "InitTaisan: "+account.getId_user() );
 
-            loadViTest.execute("0930028202355","u");
+            loadViTest.execute(account.getId_user().replaceAll("[^a-zA-Z0-9]",""),"u");
         }
         return account;
     }
     private void SetAdapter(List<Taisan> news) {
-        viewAdapter = new TaisanListAdapter(getContext(), news);
+        viewAdapter = new TaisancanhanAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
     }

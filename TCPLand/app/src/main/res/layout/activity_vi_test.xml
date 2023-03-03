@@ -26,14 +26,25 @@
         app:layout_constraintVertical_bias="0.3"
         tools:ignore="MissingConstraints" />
     <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_green_solid"
+        android:orientation="vertical">
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/rectangle_white_solid"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="Tổng thu"
+            android:text="Tổng thu: "
             android:textSize="15dp">
         </TextView>
         <TextView
@@ -49,12 +60,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/rectangle_white_solid"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="Tổng chi"
+            android:text="Tổng chi: "
             android:textSize="15dp">
         </TextView>
         <TextView
@@ -70,12 +84,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/rectangle_white_solid"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:text="Tổng nạp"
+            android:text="Tổng nạp: "
             android:textSize="15dp">
         </TextView>
         <TextView
@@ -91,12 +108,15 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/rectangle_white_solid"
         android:layout_margin="10dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Tổng rút"
+            android:text="Tổng rút: "
+            android:textStyle="bold"
             android:textSize="15dp">
         </TextView>
         <TextView
@@ -108,13 +128,16 @@
             android:text="0"
             android:textSize="15dp">
         </TextView>
+
+    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:id="@+id/lich_su_nap_frmt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_ripple">
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lich_su_nap_frmt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/custom_ripple">
-    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

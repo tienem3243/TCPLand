@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="vertical"
-    tools:context=".View.Account.ui.login.Sign_up"
+    tools:context=".Page.Activity.HomeActivity"
     android:background="@android:color/transparent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -214,13 +214,31 @@
 <!--            android:layout_height="wrap_content"-->
 <!--            android:text="Cập nhật">-->
 <!--        </Button>-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/datalistTaisan"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/custom_ripple">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rectangle_white_solid"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Danh sách tài sản"
+                android:layout_gravity="center_horizontal"
+                android:textSize="30dp">
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/datalistTaisan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/custom_ripple">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

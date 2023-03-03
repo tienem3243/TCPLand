@@ -1,7 +1,9 @@
 package com.example.tcpland.Page.Fragments.Fragments.Wallet;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.tcpland.Model.Account;
 import com.example.tcpland.R;
 import com.example.tcpland.Vi.Vi_Fragment;
 import com.example.tcpland.databinding.WalletFragmentBinding;
 import com.example.tcpland.Page.Fragments.Duan.DuAnFragment;
+
+import java.util.Objects;
 
 
 public class Wallet extends Fragment {
@@ -59,6 +64,7 @@ public class Wallet extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,6 +73,11 @@ public class Wallet extends Fragment {
         TextView vi2= binding.vi2;
         TextView vi3= binding.vi3;
         RelativeLayout layout=binding.buttonGoLichsu;
+        Account account = (Account) requireActivity().getIntent().getSerializableExtra("userInfo");
+        Log.e("testSeri", "onCreateView: "+account.getVi1().getBalance().toString() );
+        vi1.setText(account.getVi1().getBalance().toString());
+        vi2.setText(account.getVi2().getBalance().toString());
+        vi3.setText(account.getVi3().getBalance().toString());
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

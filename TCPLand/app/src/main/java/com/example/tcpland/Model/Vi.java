@@ -1,17 +1,25 @@
 package com.example.tcpland.Model;
 
 public class Vi {
-    private Double balance;
+
 
     public Vi(String accountAddress, Double balance) {
         this.accountAddress = accountAddress;
-        Balance = balance;
+        balance = balance;
     }
     public Vi() {
     }
-
+    private Double balance=0d;
     String accountAddress;
-    Double Balance;
+
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public String getAccountAddress() {
+        return accountAddress;
+    }
 
     public Vi setAccountAddress(String accountAddress) {
         this.accountAddress = accountAddress;

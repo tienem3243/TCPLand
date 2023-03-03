@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tcpland.Adapter.UserFragmentStateAdapter;
 import com.example.tcpland.Animation.DepthPageTransformer;
 import com.example.tcpland.R;
 import com.google.android.material.tabs.TabLayout;
@@ -44,10 +43,10 @@ public class TaisanPager extends Fragment {
                 (tab, position) -> {
                     switch (position){
                         case 0:
-                            tab.setText("Tài sản cá nhân");
+                            tab.setText("Thông tin cá nhân");
                             break;
                         case 1:
-                            tab.setText("Tài sản nhóm");
+                            tab.setText("Thông tin nhóm");
                             break;
                     }
                 }

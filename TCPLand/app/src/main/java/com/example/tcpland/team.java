@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-import com.example.tcpland.Model.Taisan;
 import com.example.tcpland.Model.ThanhVien;
 import com.example.tcpland.Model.ThanhVienBuilder;
 

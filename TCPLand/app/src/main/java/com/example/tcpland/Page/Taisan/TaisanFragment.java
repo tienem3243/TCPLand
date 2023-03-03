@@ -15,11 +15,7 @@ import android.widget.Toast;
 
 import com.example.tcpland.R;
 import com.example.tcpland.Task.LoadTaisan;
-import com.example.tcpland.Task.LoadViTest;
-import com.example.tcpland.Vi.Chitietnaprut;
-import com.example.tcpland.Vi.ChitietnaprutAdapter;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -29,7 +25,7 @@ import java.util.List;
 public class TaisanFragment extends Fragment {
     List<Taisan> data;
     RecyclerView recyclerView;
-    TaisanListAdapter viewAdapter;
+    TaisancanhanAdapter viewAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,7 +61,7 @@ public class TaisanFragment extends Fragment {
     }
 
     private void SetAdapter(List<Taisan> news) {
-        viewAdapter = new TaisanListAdapter(getContext(), news);
+        viewAdapter = new TaisancanhanAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
     }

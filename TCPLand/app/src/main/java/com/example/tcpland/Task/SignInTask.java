@@ -83,7 +83,7 @@ public class SignInTask extends AsyncTask<String, Void, Boolean> {
             JsonNode jsonNode = mapper.readTree(res);
             accountInfo = new Account();
             jsonNode=jsonNode.get(0);
-            accountInfo.setUserId(jsonNode.get("id_user").toString());
+            accountInfo.setId_user(jsonNode.get("id_user").toString());
             accountInfo.setEmail(jsonNode.get("email").toString());
             accountInfo.setPassword("password");
             accountInfo.setSdt(jsonNode.get("sdt").toString());

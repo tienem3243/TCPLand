@@ -1,12 +1,12 @@
-package com.example.tcpland.Adapter;
+package com.example.tcpland.Page.Taisan;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tcpland.Page.Taisan.TaisanUser;
-import com.example.tcpland.Page.Taisan.TeamUserTaisan;
+import com.example.tcpland.Page.Taisan.TaisanUserFragment;
+import com.example.tcpland.Page.Taisan.TeamUserTaisanFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +23,8 @@ public class UserFragmentStateAdapter extends FragmentStateAdapter {
 
     private List<Fragment> InitData() {
         List<Fragment> userManager=new ArrayList<>();
-        userManager.add(new TaisanUser());
-        userManager.add(new TeamUserTaisan());
+        userManager.add(new TaisanUserFragment());
+        userManager.add(new TeamUserTaisanFragment());
         return userManager;
     }
 
@@ -35,7 +35,7 @@ public class UserFragmentStateAdapter extends FragmentStateAdapter {
         if(userManagerList.get(position)!=null)
        return userManagerList.get(position);
         else
-            return new TaisanUser();
+            return new TaisanUserFragment();
     }
 
 
