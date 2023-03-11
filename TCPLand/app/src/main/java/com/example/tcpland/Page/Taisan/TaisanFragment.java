@@ -13,17 +13,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.tcpland.Model.Account;
 import com.example.tcpland.R;
 import com.example.tcpland.Task.LoadTaisan;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 
 public class TaisanFragment extends Fragment {
-    List<Taisan> data;
+    List<Sohuu> data;
     RecyclerView recyclerView;
     TaisancanhanAdapter viewAdapter;
 
@@ -47,20 +49,25 @@ public class TaisanFragment extends Fragment {
                     ObjectMapper objectMapper = new ObjectMapper();
                     String jsonNode = objectMapper.readTree(e).get(0).toString();
                     Log.e("testJsonode", "get: " + e);
-                    data= objectMapper.readValue(e, new TypeReference<List<Taisan>>() {
+                    data= objectMapper.readValue(e, new TypeReference<List<Sohuu>>() {
                     });
+                    Collections.reverse(data);
                     recyclerView = (RecyclerView) v.findViewById(R.id.datalist);
+                    //Tinh tai san
+                    
                     SetAdapter(data);
                 } catch (Exception exception) {
                     Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
                 }
             }
         });
-        loadViTest.execute("0930028202355", "u");
+        Account account= (Account) requireActivity().getIntent().getSerializableExtra("userInfo");
+        String id=account.getId_user().replaceAll("\"","");
+        loadViTest.execute(id,"u");
         return v;
     }
 
-    private void SetAdapter(List<Taisan> news) {
+    private void SetAdapter(List<Sohuu> news) {
         viewAdapter = new TaisancanhanAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);

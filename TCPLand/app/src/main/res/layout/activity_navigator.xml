@@ -11,9 +11,15 @@
     <include
         android:id="@+id/app_bar_navigator"
         layout="@layout/app_bar_navigator"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <LinearLayout
+        android:id="@+id/fragment_container4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"

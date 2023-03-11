@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/trendig_green"
     tools:context=".Page.Fragments.Fragments.Wallet.Wallet">
@@ -64,118 +64,118 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@id/total_val_vg"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_below="@+id/daily_val_vg"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/gradient_color_retangle"
-            android:elevation="11dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="19dp">
-            <TextView
-                android:id="@+id/total_val1"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:text="Ví 2"
-                android:textColor="@color/white">
+<!--        <LinearLayout-->
+<!--            android:id="@id/total_val_vg"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="110dp"-->
+<!--            android:layout_below="@+id/daily_val_vg"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@drawable/gradient_color_retangle"-->
+<!--            android:elevation="11dp"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:paddingTop="19dp">-->
+<!--            <TextView-->
+<!--                android:id="@+id/total_val1"-->
+<!--                android:layout_width="178dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Ví 2"-->
+<!--                android:textColor="@color/white">-->
 
-            </TextView>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/vi2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/total_val1"
-                    android:text="0"
-                    android:textStyle="bold"
-                    android:textColor="@color/white">
+<!--            </TextView>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/vi2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/total_val1"-->
+<!--                    android:text="0"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white">-->
 
-                </TextView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+<!--                </TextView>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
 
-                    android:layout_marginLeft="2dp"
-                    android:layout_toEndOf="@+id/total_val3"
-                    android:text="VND"
-                    android:textStyle="bold"
-                    android:textColor="@color/white">
+<!--                    android:layout_marginLeft="2dp"-->
+<!--                    android:layout_toEndOf="@+id/total_val3"-->
+<!--                    android:text="VND"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white">-->
 
-                </TextView>
-
-
-            </LinearLayout>
+<!--                </TextView>-->
 
 
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/total_profit_val"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_below="@+id/total_val_vg"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/gradient_color_retangle"
-            android:elevation="11dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="19dp">
-            <TextView
-                android:id="@+id/total_profit_val1"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:text="Ví 3"
-                android:textColor="@color/white">
-
-            </TextView>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/vi3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/total_profit_val1"
-                    android:text="0"
-                    android:textStyle="bold"
-                    android:textColor="@color/white">
-
-                </TextView>
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/total_profit_val1"
-                    android:layout_marginLeft="2dp"
-                    android:textStyle="bold"
-                    android:layout_toEndOf="@+id/total_profit_val3"
-                    android:text="VND"
-                    android:textColor="@color/white">
-
-                </TextView>
-
-
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
 
 
+<!--        </LinearLayout>-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/total_profit_val"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="110dp"-->
+<!--            android:layout_below="@+id/total_val_vg"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:orientation="vertical"-->
+<!--            android:background="@drawable/gradient_color_retangle"-->
+<!--            android:elevation="11dp"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:paddingTop="19dp">-->
+<!--            <TextView-->
+<!--                android:id="@+id/total_profit_val1"-->
+<!--                android:layout_width="178dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Ví 3"-->
+<!--                android:textColor="@color/white">-->
 
-        </LinearLayout>
+<!--            </TextView>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/vi3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/total_profit_val1"-->
+<!--                    android:text="0"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/white">-->
+
+<!--                </TextView>-->
+<!--                <TextView-->
+
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/total_profit_val1"-->
+<!--                    android:layout_marginLeft="2dp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_toEndOf="@+id/total_profit_val3"-->
+<!--                    android:text="VND"-->
+<!--                    android:textColor="@color/white">-->
+
+<!--                </TextView>-->
+
+
+<!--            </LinearLayout>-->
+
+
+
+
+
+<!--        </LinearLayout>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

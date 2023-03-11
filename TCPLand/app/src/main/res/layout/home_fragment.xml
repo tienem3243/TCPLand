@@ -11,6 +11,7 @@
         android:id="@+id/horizontal_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:scrollbars="none">
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -26,25 +27,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tin tức"
-                android:textColor="@color/white"
-                android:textSize="30dp">
-            </TextView>
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tin tức"
+                    android:textColor="@color/white"
+                    android:textSize="30dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/xemtintuc"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem thêm>>"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp">
+                </TextView>
+            </RelativeLayout>
+
             <ScrollView
                 android:id="@+id/newsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </ScrollView>
-            <TextView
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dự án"
-                android:textColor="@color/white"
-                android:textSize="30dp">
-            </TextView>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dự án"
+                    android:textColor="@color/white"
+                    android:textSize="30dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/xemduan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem thêm>>"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/orange"
+                    android:textSize="20dp">
+                </TextView>
+            </RelativeLayout>
+
+
             <ScrollView
                 android:id="@+id/duAn"
                 android:layout_width="match_parent"

@@ -13,12 +13,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tcpland.Model.Account;
 import com.example.tcpland.R;
 import com.example.tcpland.Task.LoadUserData;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class TeamUserTaisanFragment extends Fragment {
     List<UserDataTest> data;
@@ -36,18 +39,24 @@ public class TeamUserTaisanFragment extends Fragment {
         LoadUserData userData= new LoadUserData();
         recyclerView= (RecyclerView) v.findViewById(R.id.datalistTaisanTeam);
         userData.setQuerry("https://gtechland.herokuapp.com/api/getuserdata");
+        progressBar.setVisibility(View.VISIBLE);
         userData.setGo(e -> {
-            progressBar.setVisibility(View.VISIBLE);
+
         });
         userData.getResult(e -> {
             ObjectMapper objectMapper= new ObjectMapper();
             data=objectMapper.readValue(e,new TypeReference<List<UserDataTest>>(){});
-            Log.e("testLoadUserData", "onCreateView: "+data.get(0).hoahong );
-
-            SetAdapter(data);
+            Collections.reverse(data);
             progressBar.setVisibility(View.GONE);
+            if(data.size()==0){
+                return;
+            }
+            SetAdapter(data);
+
         });
-        userData.execute("phongvinh.gtech.co7@gmail.com","VINHPHroo789@");
+        Account account= (Account) requireActivity().getIntent().getSerializableExtra("userInfo");
+        userData.execute(account.getEmail().replaceAll("\"",""),account.getPassword().replaceAll("\"",""));
+        Log.e("testLoad", "onCreateView: "+account.getEmail().replaceAll("\"","")+" "+account.getPassword().replaceAll("\"","") );
         return v;
     }
     private void SetAdapter(List<UserDataTest> news) {

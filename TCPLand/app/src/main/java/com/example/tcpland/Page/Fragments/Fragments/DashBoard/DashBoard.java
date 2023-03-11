@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import com.example.tcpland.Page.Fragments.Fragments.Social_Media;
 import com.example.tcpland.Page.Fragments.Duan.DuAnFragment;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -107,11 +109,34 @@ public class DashBoard extends Fragment {
 
         ArrayList<ItemModel> dashBoardGridItemList = new ArrayList<>();
         //todo change follow app require
+        TextView xemduan=view.findViewById(R.id.xemduan);
+        xemduan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new DuAnFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+        TextView xemtintuc= view.findViewById(R.id.xemtintuc);
+        xemtintuc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requireActivity()
+                        .getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new TinTucFragmt())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         InitDashBoard(dashBoardGridItemList);
     }
 
     private void InitDashBoard(ArrayList<ItemModel> dashBoardGridItemList) {
-        dashBoardGridItemList.add(new ItemModel("Hợp đồng hợp tác", R.drawable.ic_contract, new Contract()));
+
         dashBoardGridItemList.add(new ItemModel("Tin tức", R.drawable.ic_news, new TinTucFragmt()));
         dashBoardGridItemList.add(new ItemModel("Dự án", R.drawable.ic_news, new DuAnFragment(getActivity())));
         //set up du an
@@ -125,7 +150,7 @@ public class DashBoard extends Fragment {
                 .replace(R.id.newsView, new TinTucFragmt())
                 .commit();
         dashBoardGridItemList.add(new ItemModel("Liên hệ", R.drawable.ic_social_media, new Social_Media()));
-        DashBoardAdapter adapter = new DashBoardAdapter(getActivity(), dashBoardGridItemList);
+        DashBoardAdapter adapter = new DashBoardAdapter(requireActivity(), dashBoardGridItemList);
         //set up menu
         LinearLayout linearLayout = getView().findViewById(R.id.linearLayout1);
         for (int i = 0; i < dashBoardGridItemList.size(); i++) {
@@ -134,9 +159,10 @@ public class DashBoard extends Fragment {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    getActivity()
+                    requireActivity()
                             .getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragment_container, dashBoardGridItemList.get(finalI).getTargetFragment())
+                            .addToBackStack(null)
                             .commit();
                 }
             });

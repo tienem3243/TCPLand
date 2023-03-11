@@ -69,11 +69,7 @@ public class LoadTaisan extends AsyncTask<String, Void, String> {
             res = querry(strings[0], strings[1]);
             return res;
         } catch (IOException e) {
-            try {
-                err.get(String.valueOf(e));
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+
             e.printStackTrace();
             Log.e("errTask", "doInBackground: "+e );
 

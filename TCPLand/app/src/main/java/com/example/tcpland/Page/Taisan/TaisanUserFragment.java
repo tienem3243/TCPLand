@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +27,12 @@ import java.io.IOException;
 import java.util.List;
 
 public class TaisanUserFragment extends Fragment {
-    List<Taisan> data;
+    List<Sohuu> data;
     RecyclerView recyclerView;
+    Account account;
+    String getIntentExtra;
+    Intent intent;
+    ProgressBar progressBar;
     TaisancanhanAdapter viewAdapter;
     public TaisanUserFragment() {
         // required empty public constructor.
@@ -36,35 +41,42 @@ public class TaisanUserFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-      String s=getActivity().getIntent().getSerializableExtra("userInfo").toString();
-        Account account = null;
-        Intent intent= getActivity().getIntent();
+
+         try {
+             getIntentExtra = requireActivity().getIntent().getSerializableExtra("userInfo").toString();
+             intent= requireActivity().getIntent();
+         }catch (Exception e){
+
+         }
+
 //        String userID=intent.getSerializableExtra("userid").toString().replaceAll("[^a-zA-Z0-9]","");
         View v=inflater.inflate(R.layout.user_account, container, false);
-        account = InitTaisan(s, account,v);
-
-        Log.e("checktrans2", "onCreateView: "+s );
+        if(account==null)
+            account = (Account)getActivity().getIntent().getSerializableExtra("userInfo");
+        account = InitTaisan(getIntentExtra, account,v);
+        progressBar= v.findViewById(R.id.loadingTaisan);
+        progressBar.setVisibility(View.VISIBLE);
+        Log.e("checktrans2", "onCreateView: "+ getIntentExtra);
         TextView id=v.findViewById(R.id.userID);
         TextView email=v.findViewById(R.id.emailView);
         TextView SDT=v.findViewById(R.id.sdt);
         TextView Hoten=v.findViewById(R.id.hotenUser);
         TextView tructhuoc=v.findViewById(R.id.tructhuoc);
         TextView capbac=v.findViewById(R.id.capbac);
-        id.setText(account.getId_user().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
-        email.setText(account.getEmail().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
-        SDT.setText(account.getSdt().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
-        Hoten.setText(account.getHoten().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
-        tructhuoc.setText(account.getIdNguoiGioiThieu().replaceAll("[^a-zA-Z0-9]","").replace("null",""));
-        capbac.setText(String.valueOf(account.getCapbac()).replaceAll("[^a-zA-Z0-9]","").replace("null",""));
+        id.setText(account.getId_user().replaceAll("\"","").replace("null","")+"");
+        email.setText(account.getEmail().replaceAll("\"","").replace("null","")+"");
+        SDT.setText(account.getSdt().replaceAll("\"","").replace("null","")+"");
+        Hoten.setText(account.getHoten().replaceAll("\"","").replace("null","")+"");
+        tructhuoc.setText(account.getIdNguoiGioiThieu().replaceAll("\"","").replace("null","")+"");
+        capbac.setText(String.valueOf(account.getCapbac()).replaceAll("\"","").replace("null","")+"");
         return v;
     }
 
-    private Account InitTaisan(String s, Account account,View v) {
+    private Account InitTaisan(String s, Account acc,View v) {
 
         if(s !=null){
           DataStored dataStored = new DataStored();
 
-          account = (Account)getActivity().getIntent().getSerializableExtra("userInfo");
             LoadTaisan loadViTest= new LoadTaisan();
             loadViTest.setQuerry("https://gtechland.herokuapp.com/api/gettaisanuser");
             loadViTest.setGo(new LoadTaisan.Data() {
@@ -73,29 +85,24 @@ public class TaisanUserFragment extends Fragment {
 
                 }
             });
-            loadViTest.getResult(new LoadTaisan.Data() {
-                @Override
-                public void get(String e) throws IOException {
-                    try{
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        String jsonNode=objectMapper.readTree(e).get(0).toString();
-                        Log.e("testJsonode", "get: "+jsonNode );
-                        data= objectMapper.readValue(e,new TypeReference<List<Taisan>>(){});
-                        Log.e("testTaisan", "get: "+data.get(0).bds_muachung );
-                        recyclerView = (RecyclerView) v.findViewById(R.id.datalistTaisan);
-                        SetAdapter(data);
-                    }catch (Exception exception){
-                        Toast.makeText(getContext(),e,Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
-            Log.e("testAccount", "InitTaisan: "+account.getId_user() );
+            loadViTest.getResult(e -> {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    String jsonNode=objectMapper.readTree(e).get(0).toString();
+                    Log.e("testJsonode", "get: "+jsonNode );
+                    data= objectMapper.readValue(e,new TypeReference<List<Sohuu>>(){});
+                    progressBar.setVisibility(View.GONE);
+                    if(data==null) return;
+                    Log.e("testTaisan", "get: "+data.get(0).bds_muachung );
+                    recyclerView = (RecyclerView) v.findViewById(R.id.datalistTaisan);
+                    SetAdapter(data);
 
-            loadViTest.execute(account.getId_user().replaceAll("[^a-zA-Z0-9]",""),"u");
+            });
+            loadViTest.setErr(e -> Toast.makeText(getContext(),e.toString(),Toast.LENGTH_LONG).show());
+            loadViTest.execute(acc.getId_user().replaceAll("\"",""),"u");
         }
-        return account;
+        return acc;
     }
-    private void SetAdapter(List<Taisan> news) {
+    private void SetAdapter(List<Sohuu> news) {
         viewAdapter = new TaisancanhanAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);

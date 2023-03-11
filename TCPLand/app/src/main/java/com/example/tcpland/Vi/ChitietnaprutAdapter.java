@@ -72,6 +72,7 @@ public class ChitietnaprutAdapter extends RecyclerView.Adapter<ChitietnaprutAdap
             ngaygiaodich= itemView.findViewById(R.id.ngaygiaodich);
             content = itemView.findViewById(R.id.context);
             dropdownIcon=itemView.findViewById(R.id.dropdown_iconGiaodich);
+            itemView.setOnClickListener(this);
         }
 
         @Override

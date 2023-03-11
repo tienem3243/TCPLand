@@ -100,7 +100,7 @@ public class DuAnFragment extends Fragment {
     private void SetAdapter(List<Duan> news) {
         viewAdapter = new DuanAdapter(getContext(), news);
         LinearLayoutManager layoutManager
-                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+                = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(viewAdapter);
     }

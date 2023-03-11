@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TCPLand</string>
+    <string name="app_name">GTechLand</string>
     <string name="email">Email</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="hello_world">Hello</string>
@@ -11,7 +11,7 @@
     <string name="sign_up">signup</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="real_estate">Bất động sản</string>
+    <string name="real_estate">Nạp tiền</string>
     <string name="trang_ch">Trang chủ</string>
     <string name="wallet">Ví</string>
     <string name="refactor">Tài khoản</string>

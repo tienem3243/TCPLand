@@ -2,6 +2,7 @@ package com.example.tcpland.View.Account.ui.login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -136,8 +137,11 @@ public class LoginActivity extends AppCompatActivity {
 
         if (getIntent().getExtras() != null) {
             Intent intentz = getIntent();
+
             String email = intentz.getStringExtra("email");
-            String pass = intentz.getStringExtra("password");
+            String pass = intentz.getStringExtra("password"); SharedPreferences sp=getSharedPreferences("Login", MODE_PRIVATE);
+
+
             loginViewModel.loginDataChanged(usernameEditText.getText().toString(), passwordEditText.getText().toString());
             usernameEditText.setText(email);
             passwordEditText.setText(pass);

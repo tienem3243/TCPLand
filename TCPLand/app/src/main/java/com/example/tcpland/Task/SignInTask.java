@@ -85,7 +85,7 @@ public class SignInTask extends AsyncTask<String, Void, Boolean> {
             jsonNode=jsonNode.get(0);
             accountInfo.setId_user(jsonNode.get("id_user").toString());
             accountInfo.setEmail(jsonNode.get("email").toString());
-            accountInfo.setPassword("password");
+            accountInfo.setPassword(jsonNode.get("password").toString());
             accountInfo.setSdt(jsonNode.get("sdt").toString());
             Vi vi1 = new Vi();
             vi1.setAccountAddress(jsonNode.get("tk_1_address").toString());

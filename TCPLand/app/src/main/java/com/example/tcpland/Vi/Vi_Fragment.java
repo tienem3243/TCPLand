@@ -24,6 +24,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Vi_Fragment extends Fragment {
@@ -39,10 +41,11 @@ public class Vi_Fragment extends Fragment {
         View v = inflater.inflate(R.layout.activity_vi_test,container,false);
         ProgressBar progressBar= v.findViewById(R.id.loadingVi);
         LoadViTest loadViTest=new LoadViTest();
+        progressBar.setVisibility(View.VISIBLE);
         loadViTest.setGo(new LoadViTest.Data() {
             @Override
             public void get(String e) {
-                progressBar.setVisibility(View.VISIBLE);
+
             }
         });
         loadViTest.setQuerry("https://gtechland.herokuapp.com/api/getvinaprutuser");
@@ -64,6 +67,7 @@ public class Vi_Fragment extends Fragment {
                 BigDecimal tongrutRes=BigDecimal.ZERO;
                 String res= String.valueOf(jsonNode);
                 data= objectMapper.readValue(res,new TypeReference<List<Chitietnaprut>>(){});
+                Collections.reverse(data);
                 for(Chitietnaprut chitietnaprut:data){
                     Log.e("checksum", "onCreate: "+chitietnaprut.getSotien_nap() );
                     tongnapRes=  tongnapRes.add(chitietnaprut.getSotien_nap());

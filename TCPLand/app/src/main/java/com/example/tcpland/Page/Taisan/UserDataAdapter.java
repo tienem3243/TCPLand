@@ -1,16 +1,21 @@
 package com.example.tcpland.Page.Taisan;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tcpland.Model.Account;
 import com.example.tcpland.R;
 import com.example.tcpland.Task.LoadViTest;
 
@@ -23,6 +28,9 @@ import java.util.List;
 public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyViewHolder> {
     Context context;
     List<UserDataTest> dataList;
+
+
+
 
 
 
@@ -45,7 +53,15 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyView
         Log.e("posData", "onBindViewHolder: "+position);
         holder.content.setText(dataList.get(position).toString());
         holder.id.setText("ID: "+dataList.get(position).id_user);
-        holder.emailUser.setText("Email: "+dataList.get(position).email);
+        holder.accountd= new Account();
+        holder.accountd.setId_user(dataList.get(position).id_user);
+        holder.accountd.setSdt(dataList.get(position).sdt+"");
+        holder.accountd.setHoten(dataList.get(position).hoten+"");
+        holder.accountd.setTructhuoc_id(dataList.get(position).tructhuoc_id+"");
+        holder.accountd.setCapbac(dataList.get(position).capbac);
+        holder.accountd.setEmail(dataList.get(position).getEmail().replaceAll("\"","")+"");
+        holder.accountd.setPassword(dataList.get(position).getPassword().replaceAll("\"","")+"");
+        holder.emailUser.setText("Email: "+dataList.get(position).email+"");
     }
 
 
@@ -61,29 +77,45 @@ public class UserDataAdapter extends RecyclerView.Adapter<UserDataAdapter.MyView
         TextView id;
         ImageView dropdownIcon;
         TextView emailUser;
+        View contentHolder;
+        Account accountd;
+        Button button;
         public MyViewHolder(View itemView) {
             super(itemView);
             //   id = itemView.findViewById(R.id.ids);
+            contentHolder=itemView.findViewById(R.id.contentHolder);
             dropdownIcon=itemView.findViewById(R.id.dropdown_icon);
             content = itemView.findViewById(R.id.contextUserData);
             id= itemView.findViewById(R.id.idUserData);
-            content.animate().alpha(0.0f);
+            contentHolder.animate().alpha(0.0f);
             emailUser= itemView.findViewById(R.id.emailUser);
             itemView.setOnClickListener(this);
+            button=itemView.findViewById(R.id.chitiettaisan);
+            AppCompatActivity activity = (AppCompatActivity) itemView.getContext();
+            Log.e("activityName", "MyViewHolder: "+activity.getClass().getSimpleName() );
+            button.setOnClickListener(v -> {
+                TaisanUserFragment userFragment=new TaisanUserFragment();
+                userFragment.account=accountd;
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container4, userFragment).addToBackStack(null).commit();
+            });
         }
 
 
         @Override
         public void onClick(View v) {
-            if(content.getVisibility()==View.GONE){
-                content.setVisibility(View.VISIBLE);
+            ShowView();
+        }
 
-                content.animate().alpha(1.0f);
+        private void ShowView() {
+            if(contentHolder.getVisibility()==View.GONE){
+                contentHolder.setVisibility(View.VISIBLE);
+
+                contentHolder.animate().alpha(1.0f);
             }
 
             else {
-                content.setVisibility(View.GONE);
-                content.animate().alpha(0.0f);
+                contentHolder.setVisibility(View.GONE);
+                contentHolder.animate().alpha(0.0f);
             }
             if(dropdownIcon.getRotation()==0)
             dropdownIcon.setRotation(90);

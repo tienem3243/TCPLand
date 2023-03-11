@@ -1,7 +1,7 @@
 package com.example.tcpland.Page.Taisan;
 
 public class UserDataTest {
-    public UserDataTest(String id_user, String email, String password, String sdt, String tk_1_address, String tk_2_address, String tk_3_address, String tk_1_money, String tk_2_money, String tk_3_money, String hoten, String tructhuoc_id, float capbac, float luong, float hoahong, String quanly_id, String ngaythamgia, String status, String kind, String stk, String nganhang, String chu_tk) {
+    public UserDataTest(String id_user, String email, String password, String sdt, String tk_1_address, String tk_2_address, String tk_3_address, String tk_1_money, String tk_2_money, String tk_3_money, String hoten, String tructhuoc_id, int capbac, float luong, float hoahong, String quanly_id, String ngaythamgia, String status, String kind, String stk, String nganhang, String chu_tk) {
         this.id_user = id_user;
         this.email = email;
         this.password = password;
@@ -34,12 +34,7 @@ public class UserDataTest {
 //                "Email: " + email + '\n' +
 //                "Password: " + password+ '\n' +
                 "Sdt: " + sdt + '\n' +
-                "Địa chỉ ví 1: " + tk_1_address + '\n' +
-                "Địa chỉ ví 2: " + tk_2_address + '\n' +
-                "Địa chỉ ví 3: " + tk_3_address + '\n' +
-                "Số dư ví 1: " + tk_1_money + '\n' +
-                "Số dư ví 2: " + tk_2_money + '\n' +
-                "Số dư ví 3: " + tk_3_money + '\n' +
+                "Số dư ví : " + tk_1_money + '\n' +
                 "Họ và tên: " + hoten + '\n' +
                 "Trực thuộc: " + tructhuoc_id + '\n' +
                 "Cấp bậc: " + capbac + '\n' +
@@ -55,27 +50,27 @@ public class UserDataTest {
         return  res;
     }
 
-    String id_user;
-    String email;
-    String password;
-    String sdt;
-    String tk_1_address;
-    String tk_2_address;
-    String tk_3_address;
-    String tk_1_money;
-    String tk_2_money;
-    String tk_3_money;
-    String hoten;
-    String tructhuoc_id;
-    float capbac;
+    String id_user="";
+    String email="";
+    String password="";
+    String sdt="";
+    String tk_1_address="";
+    String tk_2_address="";
+    String tk_3_address="";
+    String tk_1_money="";
+    String tk_2_money="";
+    String tk_3_money="";
+    String hoten="";
+    String tructhuoc_id="";
+    int capbac;
     float luong;
     float hoahong;
-    String quanly_id;
-    String ngaythamgia;
+    String quanly_id="";
+    String ngaythamgia="";
     String status;
     String kind;
     String stk;
-    String nganhang;
+    String nganhang="";
     String chu_tk;
 
     public String getId_user() {
@@ -178,7 +173,7 @@ public class UserDataTest {
         return capbac;
     }
 
-    public void setCapbac(float capbac) {
+    public void setCapbac(int capbac) {
         this.capbac = capbac;
     }
 

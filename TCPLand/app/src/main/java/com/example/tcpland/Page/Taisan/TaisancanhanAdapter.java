@@ -22,16 +22,16 @@ import java.util.List;
 
 public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapter.MyViewHolder> {
     Context context;
-    List<Taisan> dataList;
+    List<Sohuu> dataList;
     LoadViTest taskLoad;
 
-    public TaisancanhanAdapter(Context context, List<Taisan> listNews, LoadViTest load) {
+    public TaisancanhanAdapter(Context context, List<Sohuu> listNews, LoadViTest load) {
         this.context = context;
         this.dataList = listNews;
         this.taskLoad = load;
     }
 
-    public TaisancanhanAdapter(Context context, List<Taisan> newsList) {
+    public TaisancanhanAdapter(Context context, List<Sohuu> newsList) {
         this.context = context;
         this.dataList = newsList;
     }
@@ -40,7 +40,7 @@ public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapte
     public TaisancanhanAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.e("oncreat", "onCreateViewHolder: " );
         View v;
-        v = LayoutInflater.from(context).inflate(R.layout.fast_reading_card, parent, false);
+        v = LayoutInflater.from(context).inflate(R.layout.fast_reading_card2, parent, false);
          MyViewHolder myViewHolder = new MyViewHolder(v);
         return myViewHolder;
     }
@@ -48,9 +48,9 @@ public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapte
     @Override
     public void onBindViewHolder(TaisancanhanAdapter.MyViewHolder holder, int position) {
         Log.e("testList", "onBindViewHolder: "+dataList.get(position).getNgaymua());
-        holder.id.setText(dataList.get(position).getId_user());
+        holder.id.setText("ID "+dataList.get(position).getId_user());
         holder.content.setText(dataList.get(position).toString());
-        holder.ngaygiaodich.setText(dataList.get(position).getNgaymua());
+        holder.ngaygiaodich.setText("Ngày giao dịch " +dataList.get(position).getNgaymua());
     }
 
 
@@ -68,10 +68,11 @@ public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapte
         ImageView dropdownIcon;
         public MyViewHolder(View itemView) {
             super(itemView);
-            id = itemView.findViewById(R.id.idUserGiaodich);
-            ngaygiaodich= itemView.findViewById(R.id.ngaygiaodich);
-            content = itemView.findViewById(R.id.context);
-            dropdownIcon=itemView.findViewById(R.id.dropdown_iconGiaodich);
+            id = itemView.findViewById(R.id.idUserGiaodich2);
+            ngaygiaodich= itemView.findViewById(R.id.ngaygiaodich2);
+            content = itemView.findViewById(R.id.context2);
+            dropdownIcon=itemView.findViewById(R.id.dropdown_iconGiaodich2);
+            itemView.setOnClickListener(this);
         }
 
         @Override

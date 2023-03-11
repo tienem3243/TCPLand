@@ -16,7 +16,7 @@
         app:popupTheme="@style/MyWhiteColorTheme"
         android:theme="@style/MyWhiteColorTheme"
         app:showAsAction="always"
-
+        android:visibility="gone"
         app:titleTextColor="@color/white" />
 
 

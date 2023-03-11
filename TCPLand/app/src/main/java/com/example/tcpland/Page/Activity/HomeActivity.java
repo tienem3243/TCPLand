@@ -3,6 +3,8 @@ package com.example.tcpland.Page.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,13 +31,15 @@ public class HomeActivity extends AppCompatActivity {
     public void setNewsList(List<DuAnFragment> newsList) {
         this.newsList = newsList;
     }
-
+    BottomNavigationView bottomNav;
     List<DuAnFragment> newsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
+
+
         Intent intent=getIntent();
         Log.e("bundle", "onCreate: "+intent.getSerializableExtra("userInfo") );
         data= new DataStored();
@@ -47,21 +51,27 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnItemSelectedListener(navListener);
-        FloatingActionButton btn=findViewById(R.id.deposit);
-        btn.setOnClickListener(v -> {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, new NapTienFragment())
-                    .addToBackStack(null)
-                    .commit();
-        });
+//        FloatingActionButton btn=findViewById(R.id.deposit);
+//        btn.setOnClickListener(v -> {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.fragment_container, new NapTienFragment())
+//                    .addToBackStack(null)
+//                    .commit();
+//        });
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new DashBoard())
                     .commit();
 
-    }
 
+    }
+    public static void setCheckable(BottomNavigationView view, boolean checkable) {
+        final Menu menu = view.getMenu();
+        for(int i = 0; i < menu.size(); i++) {
+            menu.getItem(i).setCheckable(checkable);
+        }
+    }
 
 
     private final BottomNavigationView.OnItemSelectedListener navListener = item -> {
@@ -73,7 +83,14 @@ public class HomeActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.real_estate:
-               //
+                if(!data.isUsable()){
+                    Toast.makeText(getApplicationContext(), "Tác vụ yêu cầu đăng nhập", Toast.LENGTH_SHORT).show();
+                    HomeActivity.this.startActivity(stopToLogin);
+                }else
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new NapTienFragment())
+                        .addToBackStack(null)
+                        .commit();
                 break;
             case R.id.homeD:
                 selectedFragment = new DashBoard();

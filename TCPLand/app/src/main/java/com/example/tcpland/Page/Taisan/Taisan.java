@@ -1,36 +1,24 @@
 package com.example.tcpland.Page.Taisan;
 
+import android.util.Log;
+
 import java.math.BigDecimal;
 
-public class Taisan {
-    public Taisan(String id_user, String tructhuoc_id, String id_duan, String id_nen, String bds_muachung, int so_cophan, int dongia_cophan, String ngaymua, float loituc_chothue) {
-        this.id_user = id_user;
-        this.tructhuoc_id = tructhuoc_id;
-        this.id_duan = id_duan;
-        this.id_nen = id_nen;
-        this.bds_muachung = bds_muachung;
-        this.so_cophan = so_cophan;
-        this.dongia_cophan = dongia_cophan;
-        this.ngaymua = ngaymua;
-        this.loituc_chothue = loituc_chothue;
-    }
-    public Taisan() {
-
-    }
-    public String getId_user() {
-        return id_user;
+public class Taisan  {
+    public String getCs() {
+        return cs;
     }
 
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
+    public void setCs(String cs) {
+        this.cs = cs;
     }
 
-    public String getTructhuoc_id() {
-        return tructhuoc_id;
+    public String getTen_duan() {
+        return ten_duan;
     }
 
-    public void setTructhuoc_id(String tructhuoc_id) {
-        this.tructhuoc_id = tructhuoc_id;
+    public void setTen_duan(String ten_duan) {
+        this.ten_duan = ten_duan;
     }
 
     public String getId_duan() {
@@ -41,75 +29,91 @@ public class Taisan {
         this.id_duan = id_duan;
     }
 
-    public String getId_nen() {
-        return id_nen;
+    public String getDiachi_duan() {
+        return diachi_duan;
     }
 
-    public void setId_nen(String id_nen) {
-        this.id_nen = id_nen;
+    public void setDiachi_duan(String diachi_duan) {
+        this.diachi_duan = diachi_duan;
     }
 
-    public String getBds_muachung() {
-        return bds_muachung;
+    public int getLoai() {
+        return loai;
     }
 
-    public void setBds_muachung(String bds_muachung) {
-        this.bds_muachung = bds_muachung;
+    public void setLoai(int loai) {
+        this.loai = loai;
     }
 
-    public int getSo_cophan() {
-        return so_cophan;
+    public String getTongso_cophan() {
+        return tongso_cophan;
     }
 
-    public void setSo_cophan(int so_cophan) {
-        this.so_cophan = so_cophan;
+    public void setTongso_cophan(String tongso_cophan) {
+        this.tongso_cophan = tongso_cophan;
     }
 
-    public int getDongia_cophan() {
-        return dongia_cophan;
+    public String getCophan_damua() {
+        return cophan_damua;
     }
 
-    public void setDongia_cophan(int dongia_cophan) {
-        this.dongia_cophan = dongia_cophan;
+    public void setCophan_damua(String cophan_damua) {
+        this.cophan_damua = cophan_damua;
     }
 
-    public String getNgaymua() {
-        return ngaymua;
+    public BigDecimal getGiatri_hopdong() {
+        return giatri_hopdong;
     }
 
-    public void setNgaymua(String ngaymua) {
-        this.ngaymua = ngaymua;
+    public void setGiatri_hopdong(BigDecimal giatri_hopdong) {
+        this.giatri_hopdong = giatri_hopdong;
     }
 
-    public float getLoituc_chothue() {
+    public String getLoituc_chothue() {
+        Log.e("test", "getLoituc_chothue: "+loituc_chothue );
         return loituc_chothue;
     }
 
-    public void setLoituc_chothue(float loituc_chothue) {
+    public void setLoituc_chothue(String loituc_chothue) {
         this.loituc_chothue = loituc_chothue;
     }
 
+    public Taisan(String cs, String ten_duan, String id_duan, String diachi_duan, int loai, String tongso_cophan, String cophan_damua, BigDecimal giatri_hopdong, String loituc_chothue) {
+        this.cs = cs;
+        this.ten_duan = ten_duan;
+        this.id_duan = id_duan;
+        this.diachi_duan = diachi_duan;
+        this.loai = loai;
+        this.tongso_cophan = tongso_cophan;
+        this.cophan_damua = cophan_damua;
+        this.giatri_hopdong = giatri_hopdong;
+        this.loituc_chothue = loituc_chothue;
+    }
+    public Taisan(){};
+
+    String cs;
+    String ten_duan;
+    String id_duan;
+    String diachi_duan;
+    int loai;
+    String tongso_cophan;
+    String cophan_damua;
+    BigDecimal giatri_hopdong;
+
     @Override
     public String toString() {
-        return
-                "ID User: " + id_user + '\n' +
-                "Trực thuộc: " + tructhuoc_id + '\n' +
-                "ID dự án: " + id_duan + '\n' +
-                "ID nền: " + id_nen + '\n' +
-                "Bất động sản mua chung: " + bds_muachung + '\n' +
-                "Số cổ phần: " + so_cophan + '\n' +
-                "Đơn giá cổ phần: " + dongia_cophan + '\n' +
-                "Ngày mua: " + ngaymua + '\n' +
-                "Lợi tức cho thuê: " + loituc_chothue;
+        return "Taisan{" +
+                "cs='" + cs + '\'' +
+                ", ten_duan='" + ten_duan + '\'' +
+                ", id_duan='" + id_duan + '\'' +
+                ", diachi_duan='" + diachi_duan + '\'' +
+                ", loai='" + loai + '\'' +
+                ", tongso_cophan='" + tongso_cophan + '\'' +
+                ", cophan_damua='" + cophan_damua + '\'' +
+                ", giatri_hopdong='" + giatri_hopdong + '\'' +
+                ", loituc_chothue='" + loituc_chothue + '\'' +
+                '}';
     }
 
-    String id_user;
-   String tructhuoc_id;
-   String id_duan;
-   String id_nen;
-   String bds_muachung;
-    int so_cophan;
-    int dongia_cophan;
-    String ngaymua;
-    float loituc_chothue;
+    String loituc_chothue;
 }

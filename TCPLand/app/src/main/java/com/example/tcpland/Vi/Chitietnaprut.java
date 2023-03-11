@@ -115,9 +115,7 @@ public class Chitietnaprut {
     public String toString() {
         String res="ID: " + id_user + '\n' +
                 "Ngày giao dịch: " + ngaynaprut + '\n' +
-                "Số dư tài khoản 1: " + tk_1_money + '\n' +
-                "Số dư tài khoản 2: " + tk_2_money + '\n' +
-                "Số dư tài khoản 3: " + tk_3_money + '\n' +
+                "Số dư tài khoản: " + tk_1_money + '\n' +
                 GenerateHistorySuitable();
         return res;
     }

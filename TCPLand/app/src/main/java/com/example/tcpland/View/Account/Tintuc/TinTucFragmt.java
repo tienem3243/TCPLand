@@ -25,6 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -63,6 +64,7 @@ public class TinTucFragmt extends Fragment {
                 .get("newsPostsConnection")
                 .get("edges"));
         List<NewsNode> data= objectMapper.readValue(res,new TypeReference<List<NewsNode>>(){});
+        Collections.reverse(data);
         Log.e("testNew", "load: "+data.get(0).getNode().getAuthor().toString() );
         List<Tintuc> duans= new ArrayList<>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {

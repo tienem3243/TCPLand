@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class LoadViTest extends AsyncTask<String, Void, String> {
+public class LoadChinhsach extends AsyncTask<String, Void, String> {
     public Data getLoad() {
         return load;
     }
@@ -49,19 +49,15 @@ public class LoadViTest extends AsyncTask<String, Void, String> {
     Data err;
     Data load;
     Data go;
-
-    public void setGo(LoadTaisan.Data data) {
-    }
-
     public interface Data {
          void get(String e) throws IOException;
     }
 
-    public LoadViTest(Data data) {
+    public LoadChinhsach(Data data) {
         this.load = data;
     }
 
-    public LoadViTest() {
+    public LoadChinhsach() {
     }
 
     @Override
@@ -97,11 +93,12 @@ public class LoadViTest extends AsyncTask<String, Void, String> {
         super.onPostExecute(s);
     }
 
-    public String querry(String id_user, String auth)
+    public String querry(String email, String passwd)
             throws IOException {
         RequestBody formBody = new FormBody.Builder()
-                .add("id_user", id_user)
-                .add("auth", auth)
+                .add("email", email)
+                .add("password", passwd)
+                .add("auth","u")
                 .build();
 
         OkHttpClient client = new OkHttpClient();
