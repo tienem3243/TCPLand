@@ -167,22 +167,22 @@ public class Account implements Serializable {
         return this;
     }
     public Account setId_user(String id_user) {
-        this.id_user = id_user;
+        this.id_user = id_user.replaceAll("\"","");
         return this;
     }
 
     public Account setHoten(String hoten) {
-        this.hoten = hoten;
+        this.hoten = hoten.replaceAll("\"","");
         return this;
     }
 
     public Account setEmail(String email) {
-        this.email = email;
+        this.email = email.replaceAll("\"","");
         return this;
     }
 
     public Account setPassword(String password) {
-        this.password = password;
+        this.password = password.replaceAll("\"","");
         return this;
     }
 

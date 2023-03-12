@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.math.BigDecimal;
 
-public class Taisan  {
+public class Chinhsach {
     public String getCs() {
         return cs;
     }
@@ -70,7 +70,7 @@ public class Taisan  {
     }
 
     public String getLoituc_chothue() {
-        Log.e("test", "getLoituc_chothue: "+loituc_chothue );
+
         return loituc_chothue;
     }
 
@@ -78,7 +78,7 @@ public class Taisan  {
         this.loituc_chothue = loituc_chothue;
     }
 
-    public Taisan(String cs, String ten_duan, String id_duan, String diachi_duan, int loai, String tongso_cophan, String cophan_damua, BigDecimal giatri_hopdong, String loituc_chothue) {
+    public Chinhsach(String cs, String ten_duan, String id_duan, String diachi_duan, int loai, String tongso_cophan, String cophan_damua, BigDecimal giatri_hopdong, String loituc_chothue) {
         this.cs = cs;
         this.ten_duan = ten_duan;
         this.id_duan = id_duan;
@@ -89,7 +89,7 @@ public class Taisan  {
         this.giatri_hopdong = giatri_hopdong;
         this.loituc_chothue = loituc_chothue;
     }
-    public Taisan(){};
+    public Chinhsach(){};
 
     String cs;
     String ten_duan;

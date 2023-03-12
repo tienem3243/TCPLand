@@ -1,9 +1,11 @@
 package com.example.tcpland.Page.Taisan;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Sohuu {
-    public Sohuu(String id_user, String tructhuoc_id, String id_duan, String id_nen, String bds_muachung, int so_cophan, BigDecimal dongia_cophan, String ngaymua, float loituc_chothue) {
+    public Sohuu(String id_user, String tructhuoc_id, String id_duan, String id_nen, String bds_muachung, int so_cophan, BigDecimal dongia_cophan, Date ngaymua, BigDecimal loituc_chothue) {
         this.id_user = id_user;
         this.tructhuoc_id = tructhuoc_id;
         this.id_duan = id_duan;
@@ -14,9 +16,11 @@ public class Sohuu {
         this.ngaymua = ngaymua;
         this.loituc_chothue = loituc_chothue;
     }
+
     public Sohuu() {
 
     }
+
     public String getId_user() {
         return id_user;
     }
@@ -73,19 +77,19 @@ public class Sohuu {
         this.dongia_cophan = dongia_cophan;
     }
 
-    public String getNgaymua() {
+    public Date getNgaymua() {
         return ngaymua;
     }
 
-    public void setNgaymua(String ngaymua) {
+    public void setNgaymua(Date ngaymua) {
         this.ngaymua = ngaymua;
     }
 
-    public float getLoituc_chothue() {
+    public BigDecimal getLoituc_chothue() {
         return loituc_chothue;
     }
 
-    public void setLoituc_chothue(float loituc_chothue) {
+    public void setLoituc_chothue(BigDecimal loituc_chothue) {
         this.loituc_chothue = loituc_chothue;
     }
 
@@ -93,23 +97,23 @@ public class Sohuu {
     public String toString() {
         return
                 "ID User: " + id_user + '\n' +
-                "Trực thuộc: " + tructhuoc_id + '\n' +
-                "ID dự án: " + id_duan + '\n' +
-                "ID nền: " + id_nen + '\n' +
-                "Bất động sản mua chung: " + bds_muachung + '\n' +
-                "Số cổ phần: " + so_cophan + '\n' +
-                "Đơn giá cổ phần: " + dongia_cophan + '\n' +
-                "Ngày mua: " + ngaymua + '\n' +
-                "Lợi tức cho thuê: " + loituc_chothue;
+                        "Trực thuộc: " + tructhuoc_id + '\n' +
+                        "ID dự án: " + id_duan + '\n' +
+                        "ID nền: " + id_nen + '\n' +
+                        "Bất động sản mua chung: " + bds_muachung + '\n' +
+                        "Số cổ phần: " + so_cophan + '\n' +
+                        "Đơn giá cổ phần: " + dongia_cophan + '\n' +
+                        "Ngày mua: " + new SimpleDateFormat("MM-dd-yyyy").format(ngaymua )+ '\n' +
+                        "Lợi tức cho thuê: " + loituc_chothue;
     }
 
     String id_user;
-   String tructhuoc_id;
-   String id_duan;
-   String id_nen;
-   String bds_muachung;
+    String tructhuoc_id;
+    String id_duan;
+    String id_nen;
+    String bds_muachung;
     int so_cophan;
     BigDecimal dongia_cophan;
-    String ngaymua;
-    float loituc_chothue;
+    Date ngaymua;
+    BigDecimal loituc_chothue;
 }

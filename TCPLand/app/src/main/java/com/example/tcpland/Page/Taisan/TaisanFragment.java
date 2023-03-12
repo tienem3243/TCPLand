@@ -1,5 +1,6 @@
 package com.example.tcpland.Page.Taisan;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,8 +21,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 
 public class TaisanFragment extends Fragment {
@@ -42,23 +47,21 @@ public class TaisanFragment extends Fragment {
 
             }
         });
-        loadViTest.getResult(new LoadTaisan.Data() {
-            @Override
-            public void get(String e) throws IOException {
-                try {
-                    ObjectMapper objectMapper = new ObjectMapper();
-                    String jsonNode = objectMapper.readTree(e).get(0).toString();
-                    Log.e("testJsonode", "get: " + e);
-                    data= objectMapper.readValue(e, new TypeReference<List<Sohuu>>() {
-                    });
-                    Collections.reverse(data);
-                    recyclerView = (RecyclerView) v.findViewById(R.id.datalist);
-                    //Tinh tai san
-                    
-                    SetAdapter(data);
-                } catch (Exception exception) {
-                    Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
-                }
+        loadViTest.getResult(e -> {
+            try {
+                ObjectMapper objectMapper = new ObjectMapper();
+
+                data= objectMapper.readValue(e, new TypeReference<List<Sohuu>>() {
+                });
+
+
+                Collections.reverse(data);
+                recyclerView = (RecyclerView) v.findViewById(R.id.datalist);
+                //Tinh tai san
+
+                SetAdapter(data);
+            } catch (Exception exception) {
+                Toast.makeText(getContext(), e, Toast.LENGTH_LONG).show();
             }
         });
         Account account= (Account) requireActivity().getIntent().getSerializableExtra("userInfo");

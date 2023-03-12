@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tcpland.R;
 import com.example.tcpland.Task.LoadViTest;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -50,7 +51,7 @@ public class TaisancanhanAdapter extends RecyclerView.Adapter<TaisancanhanAdapte
         Log.e("testList", "onBindViewHolder: "+dataList.get(position).getNgaymua());
         holder.id.setText("ID "+dataList.get(position).getId_user());
         holder.content.setText(dataList.get(position).toString());
-        holder.ngaygiaodich.setText("Ngày giao dịch " +dataList.get(position).getNgaymua());
+        holder.ngaygiaodich.setText("Ngày giao dịch " +   new SimpleDateFormat("MM-dd-yyyy").format(dataList.get(position).ngaymua ));
     }
 
 
