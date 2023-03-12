@@ -46,6 +46,7 @@ public class TeamUserTaisanFragment extends Fragment {
         userData.getResult(e -> {
             ObjectMapper objectMapper= new ObjectMapper();
             data=objectMapper.readValue(e,new TypeReference<List<UserDataTest>>(){});
+            data.remove(0);
             Collections.reverse(data);
             progressBar.setVisibility(View.GONE);
             if(data.size()==0){
